@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Kotjas Archive</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#080608;
---bg2:#120d12;
---card:#100c10;
---border:#4a2635;
---pink:#d67a95;
---text:#f4dfe7;
---muted:#b88c99;
---accent:#ff8ead;
+--bg:#120d14;
+--bg2:#1a131d;
+--card:#1f1723;
+--border:#3f2d40;
+--pink:#f29ab6;
+--pink2:#c76b89;
+--text:#fff2f7;
+--muted:#cba7b5;
 }
 
 *{
@@ -29,196 +31,41 @@ box-sizing:border-box;
 
 body{
 background:
-linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
-url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1600&auto=format&fit=crop");
+linear-gradient(rgba(8,6,10,.92),rgba(8,6,10,.94)),
+url("background.png");
 background-size:cover;
 background-attachment:fixed;
 color:var(--text);
-font-family:'IBM Plex Mono',monospace;
+font-family:'Quicksand',sans-serif;
 overflow-x:hidden;
 }
 
-/* grain overlay */
+/* grain */
 
 body::before{
 content:"";
 position:fixed;
 inset:0;
 background:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-opacity:.3;
+opacity:.25;
 pointer-events:none;
-z-index:-1;
 }
 
-/* HEADER */
+/* header */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 30px;
-border-bottom:1px solid rgba(255,255,255,.08);
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(8px);
+background:rgba(15,10,15,.82);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.06);
 position:sticky;
 top:0;
-z-index:999;
+z-index:1000;
+flex-wrap:wrap;
 gap:20px;
-flex-wrap:wrap;
-}
-
-/* LEFT */
-
-.logo-wrap{
-display:flex;
-align-items:center;
-gap:14px;
-min-width:220px;
-}
-
-.logo-icon{
-width:46px;
-height:46px;
-border:1px solid var(--border);
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:8px;
-background:rgba(255,255,255,.02);
-font-size:18px;
-flex-shrink:0;
-}
-
-.logo h1{
-font-family:'Special Elite',cursive;
-font-size:32px;
-color:var(--pink);
-letter-spacing:1px;
-line-height:1;
-}
-
-.logo p{
-font-size:11px;
-margin-top:6px;
-color:var(--muted);
-}
-
-/* NAV */
-
-nav{
-display:flex;
-gap:18px;
-align-items:center;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-nav a{
-text-decoration:none;
-color:var(--text);
-font-size:13px;
-position:relative;
-padding-bottom:4px;
-white-space:nowrap;
-}
-
-nav a:hover{
-color:var(--pink);
-}
-
-nav a.active::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:2px;
-background:var(--pink);
-}
-
-/* RIGHT SIDE */
-
-.right-nav{
-display:flex;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-justify-content:flex-end;
-}
-
-/* SEARCH */
-
-.search{
-background:rgba(255,255,255,.03);
-border:1px solid var(--border);
-padding:10px 12px;
-border-radius:6px;
-color:white;
-width:160px;
-font-size:13px;
-}
-
-/* BUTTONS */
-
-.top-btn{
-padding:10px 18px;
-border:1px solid var(--border);
-background:transparent;
-color:var(--text);
-cursor:pointer;
-font-family:'IBM Plex Mono',monospace;
-transition:.2s;
-font-size:13px;
-}
-
-.top-btn:hover{
-background:var(--pink);
-color:black;
-}
-
-.signup{
-background:var(--pink);
-color:black;
-}
-
-/* MOBILE */
-
-@media(max-width:1200px){
-
-header{
-justify-content:center;
-}
-
-nav{
-width:100%;
-}
-
-.right-nav{
-width:100%;
-justify-content:center;
-}
-
-}
-
-@media(max-width:700px){
-
-.logo h1{
-font-size:24px;
-}
-
-.search{
-width:100%;
-}
-
-.right-nav{
-flex-direction:column;
-align-items:stretch;
-}
-
-.top-btn{
-width:100%;
-}
-
 }
 
 .logo-wrap{
@@ -230,32 +77,31 @@ gap:18px;
 .logo-icon{
 width:55px;
 height:55px;
-border:1px solid var(--border);
+border-radius:18px;
+background:var(--card);
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:8px;
-background:rgba(255,255,255,.02);
-font-size:22px;
+font-size:24px;
+border:1px solid var(--border);
 }
 
 .logo h1{
 font-family:'Special Elite',cursive;
-font-size:40px;
+font-size:42px;
 color:var(--pink);
-letter-spacing:2px;
 }
 
 .logo p{
 font-size:13px;
-margin-top:4px;
+margin-top:6px;
 color:var(--muted);
 }
 
 nav{
 display:flex;
-gap:34px;
-align-items:center;
+gap:24px;
+flex-wrap:wrap;
 }
 
 nav a{
@@ -263,45 +109,36 @@ text-decoration:none;
 color:var(--text);
 font-size:14px;
 position:relative;
-padding-bottom:6px;
 }
 
 nav a:hover{
 color:var(--pink);
 }
 
-nav a.active::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:2px;
-background:var(--pink);
-}
-
 .right-nav{
 display:flex;
+gap:12px;
 align-items:center;
-gap:14px;
+flex-wrap:wrap;
 }
 
 .search{
-background:rgba(255,255,255,.03);
+padding:12px 15px;
+background:var(--card);
 border:1px solid var(--border);
-padding:11px 14px;
-border-radius:6px;
+border-radius:14px;
 color:white;
-width:180px;
+width:190px;
 }
 
 .top-btn{
-padding:12px 22px;
+padding:12px 20px;
+border-radius:14px;
+background:var(--card);
 border:1px solid var(--border);
-background:transparent;
-color:var(--text);
+color:white;
 cursor:pointer;
-font-family:'IBM Plex Mono',monospace;
+font-family:'Quicksand',sans-serif;
 transition:.2s;
 }
 
@@ -315,60 +152,69 @@ background:var(--pink);
 color:black;
 }
 
-/* HERO */
+/* hero */
 
 .hero{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-padding:70px 70px 40px;
+grid-template-columns:420px 1fr;
+gap:70px;
 align-items:center;
-border-bottom:1px solid rgba(255,255,255,.06);
+padding:70px;
 }
 
 .mascot{
+position:relative;
 display:flex;
 justify-content:center;
-position:relative;
 }
 
 .mascot img{
 width:100%;
-max-width:420px;
+max-width:350px;
 image-rendering:pixelated;
-filter:drop-shadow(0 0 30px rgba(214,122,149,.25));
+filter:drop-shadow(0 0 25px rgba(242,154,182,.2));
 }
 
 .hero-text h2{
-font-size:82px;
-line-height:1;
 font-family:'Special Elite',cursive;
-margin-bottom:30px;
+font-size:90px;
+line-height:1;
+margin-bottom:24px;
 }
 
-.hero-text h2 span{
+.hero-text span{
 color:var(--pink);
+}
+
+.line{
+width:140px;
+height:3px;
+background:var(--pink);
+margin-bottom:28px;
+border-radius:999px;
 }
 
 .hero-text p{
 line-height:2;
-max-width:650px;
+max-width:700px;
 color:var(--muted);
 margin-bottom:30px;
-font-size:15px;
+font-size:16px;
 }
 
 .hero-buttons{
 display:flex;
-gap:18px;
+gap:16px;
 flex-wrap:wrap;
 }
 
 .hero-btn{
-padding:16px 28px;
+padding:15px 24px;
+border-radius:18px;
+background:var(--card);
 border:1px solid var(--border);
 text-decoration:none;
-color:var(--text);
+color:white;
 transition:.2s;
 }
 
@@ -377,25 +223,22 @@ background:var(--pink);
 color:black;
 }
 
-.primary{
-background:rgba(214,122,149,.15);
-}
-
-/* MAIN */
+/* main layout */
 
 .main{
 display:grid;
 grid-template-columns:2fr 1fr;
-gap:35px;
-padding:40px 70px;
+gap:25px;
+padding:0 70px 50px;
 }
 
-/* RECENT CASES */
+/* cards */
 
 .section{
+background:rgba(20,15,20,.88);
 border:1px solid var(--border);
+border-radius:28px;
 padding:26px;
-background:rgba(10,10,10,.5);
 }
 
 .section-header{
@@ -403,29 +246,31 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:24px;
+flex-wrap:wrap;
+gap:12px;
 }
 
 .section-header h3{
 font-family:'Special Elite',cursive;
-font-size:30px;
+font-size:32px;
 color:var(--pink);
 }
 
 .section-header a{
 text-decoration:none;
 color:var(--pink);
-font-size:14px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:18px;
 }
 
 .card{
+background:var(--card);
 border:1px solid var(--border);
-background:rgba(255,255,255,.02);
+border-radius:22px;
 overflow:hidden;
 transition:.2s;
 }
@@ -434,59 +279,64 @@ transition:.2s;
 transform:translateY(-4px);
 }
 
-.card img{
-width:100%;
+.placeholder{
 height:180px;
-object-fit:cover;
-filter:brightness(.75);
+background:
+linear-gradient(
+45deg,
+#241821,
+#161016
+);
+border-bottom:1px solid var(--border);
 }
 
 .card-content{
-padding:18px;
+padding:20px;
 }
 
 .card h4{
-font-size:24px;
+font-family:'Special Elite',cursive;
+font-size:26px;
 margin-bottom:12px;
 color:var(--pink);
-font-family:'Special Elite',cursive;
 }
 
 .card span{
-font-size:13px;
-color:var(--muted);
 display:block;
+font-size:13px;
 margin-bottom:14px;
+color:var(--muted);
 }
 
 .card p{
+line-height:1.9;
 font-size:14px;
-line-height:1.8;
-margin-bottom:16px;
+margin-bottom:14px;
 }
 
 .card a{
-color:var(--pink);
 text-decoration:none;
+color:var(--pink);
 }
 
-/* SIDEBAR */
+/* sidebar */
 
 .sidebar{
 display:flex;
 flex-direction:column;
-gap:24px;
+gap:22px;
 }
 
 .side-box{
+background:rgba(20,15,20,.88);
 border:1px solid var(--border);
-padding:28px;
-background:rgba(10,10,10,.5);
+border-radius:28px;
+padding:26px;
 }
 
 .side-box h3{
 font-family:'Special Elite',cursive;
-font-size:28px;
+font-size:30px;
 margin-bottom:18px;
 color:var(--pink);
 }
@@ -495,34 +345,38 @@ color:var(--pink);
 line-height:2;
 font-size:14px;
 color:var(--muted);
-margin-bottom:24px;
+margin-bottom:22px;
 }
 
 .community-btn{
 display:block;
-padding:16px;
 text-align:center;
+padding:16px;
+border-radius:18px;
 background:var(--pink);
 color:black;
 text-decoration:none;
-margin-bottom:20px;
 font-weight:bold;
+margin-bottom:24px;
 }
 
 .notice{
-border:1px solid rgba(214,122,149,.3);
 padding:20px;
+border-radius:18px;
+background:rgba(255,255,255,.02);
+border:1px solid var(--border);
 line-height:2;
 font-size:14px;
 }
 
-/* RULES */
+/* rules */
 
 .rules{
-margin:0 70px 40px;
+margin:0 70px 60px;
+background:rgba(20,15,20,.88);
 border:1px solid var(--border);
-padding:35px;
-background:rgba(10,10,10,.55);
+border-radius:28px;
+padding:30px;
 }
 
 .rules h3{
@@ -533,20 +387,20 @@ color:var(--pink);
 }
 
 .rules ul{
-padding-left:22px;
+padding-left:24px;
 line-height:2.2;
 color:var(--muted);
 }
 
-/* FOOTER */
+/* footer */
 
 footer{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:35px 70px;
-border-top:1px solid rgba(255,255,255,.08);
-background:rgba(0,0,0,.4);
+padding:30px 70px;
+border-top:1px solid rgba(255,255,255,.06);
+background:rgba(15,10,15,.82);
 flex-wrap:wrap;
 gap:20px;
 }
@@ -564,7 +418,7 @@ image-rendering:pixelated;
 
 .footer-links{
 display:flex;
-gap:30px;
+gap:24px;
 flex-wrap:wrap;
 }
 
@@ -574,22 +428,7 @@ color:var(--muted);
 font-size:14px;
 }
 
-.socials{
-display:flex;
-gap:14px;
-}
-
-.social{
-width:48px;
-height:48px;
-display:flex;
-align-items:center;
-justify-content:center;
-border:1px solid var(--border);
-font-size:20px;
-}
-
-/* AGE MODAL */
+/* modal */
 
 .modal{
 display:none;
@@ -602,24 +441,25 @@ z-index:3000;
 }
 
 .modal-box{
-width:90%;
-max-width:500px;
 background:var(--card);
 border:1px solid var(--border);
 padding:40px;
+border-radius:30px;
+max-width:500px;
+width:90%;
 }
 
 .modal-box h3{
-font-size:38px;
 font-family:'Special Elite',cursive;
-margin-bottom:18px;
+font-size:40px;
+margin-bottom:20px;
 color:var(--pink);
 }
 
 .modal-box p{
 line-height:2;
-margin-bottom:24px;
 color:var(--muted);
+margin-bottom:24px;
 }
 
 .modal-buttons{
@@ -631,8 +471,9 @@ gap:14px;
 flex:1;
 padding:15px;
 border:none;
+border-radius:14px;
 cursor:pointer;
-font-family:'IBM Plex Mono',monospace;
+font-family:'Quicksand',sans-serif;
 }
 
 .confirm{
@@ -640,12 +481,12 @@ background:var(--pink);
 }
 
 .cancel{
-background:#1a1117;
-color:white;
+background:#140f14;
 border:1px solid var(--border);
+color:white;
 }
 
-/* RESPONSIVE */
+/* responsive */
 
 @media(max-width:1200px){
 
@@ -658,11 +499,12 @@ text-align:center;
 justify-content:center;
 }
 
-.main{
-grid-template-columns:1fr;
+.line{
+margin-left:auto;
+margin-right:auto;
 }
 
-.cards{
+.main{
 grid-template-columns:1fr;
 }
 
@@ -671,33 +513,41 @@ grid-template-columns:1fr;
 @media(max-width:850px){
 
 header{
-flex-direction:column;
-gap:20px;
-padding:25px;
-}
-
-nav{
-flex-wrap:wrap;
 justify-content:center;
 }
 
-.hero,
-.main,
-.rules,
+.hero{
+padding:40px 25px;
+}
+
+.main{
+padding:0 25px 40px;
+}
+
+.rules{
+margin:0 25px 40px;
+}
+
 footer{
-padding-left:25px;
-padding-right:25px;
-margin-left:0;
-margin-right:0;
+padding:25px;
+}
+
+.cards{
+grid-template-columns:1fr;
 }
 
 .hero-text h2{
-font-size:52px;
+font-size:58px;
+}
+
+.logo h1{
+font-size:30px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -711,12 +561,11 @@ font-size:52px;
 <h3>18+ Confirmation</h3>
 
 <p>
-This archive discusses real crimes, violence,
-and disturbing events for awareness and
-educational documentation purposes.
+This site discusses real crimes and tragedies
+for awareness and educational purposes.
 
-You must be 18 or older to create an account
-or access sensitive footage/discussions.
+Users must be 18 or older to create an account
+or access sensitive content.
 </p>
 
 <div class="modal-buttons">
@@ -746,15 +595,20 @@ CANCEL
 </div>
 
 <div class="logo">
+
 <h1>KOTJAS ARCHIVE</h1>
-<p>record. remember. raise awareness.</p>
+
+<p>
+record. remember. raise awareness.
+</p>
+
 </div>
 
 </div>
 
 <nav>
 
-<a href="#" class="active">HOME</a>
+<a href="#">HOME</a>
 <a href="#">CASES</a>
 <a href="#">MISSING</a>
 <a href="#">TIMELINE</a>
@@ -793,7 +647,9 @@ SIGN UP
 <section class="hero">
 
 <div class="mascot">
+
 <img src="mascot.png">
+
 </div>
 
 <div class="hero-text">
@@ -804,18 +660,22 @@ awareness.<br>
 <span>change.</span>
 </h2>
 
+<div class="line"></div>
+
 <p>
+
 Kotjas Archive documents real crimes,
 disappearances, attacks, and tragedies
-to educate, inform, and raise awareness.
+to educate, inform, and preserve awareness.
 
-This archive does not condone violent acts,
+This archive does not condone violence,
 extremism, or glorification of perpetrators.
+
 </p>
 
 <div class="hero-buttons">
 
-<a href="#" class="hero-btn primary">
+<a href="#" class="hero-btn">
 EXPLORE CASES →
 </a>
 
@@ -842,28 +702,29 @@ COMMUNITY →
 <h3>RECENT CASES</h3>
 
 <a href="#">
-VIEW ALL CASES →
+VIEW ALL →
 </a>
 
 </div>
 
 <div class="cards">
 
-<!-- CARD 1 -->
+<!-- card -->
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1200&auto=format&fit=crop">
+<div class="placeholder"></div>
 
 <div class="card-content">
 
 <h4>Samantha Rupnow</h4>
 
-<span>May 15, 2026</span>
+<span>Latest archive update</span>
 
 <p>
-Latest timeline additions,
-documents, and discussion archive.
+Timeline additions,
+discussion archives,
+and collected resources.
 </p>
 
 <a href="#">
@@ -874,21 +735,22 @@ Read More →
 
 </div>
 
-<!-- CARD 2 -->
+<!-- card -->
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+<div class="placeholder"></div>
 
 <div class="card-content">
 
 <h4>Rina Palenkova</h4>
 
-<span>May 10, 2026</span>
+<span>Historical archive</span>
 
 <p>
-Community timeline and
-historical archive documentation.
+Community discussion,
+timeline documentation,
+and preserved information.
 </p>
 
 <a href="#">
@@ -899,21 +761,48 @@ Read More →
 
 </div>
 
-<!-- CARD 3 -->
+<!-- card -->
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+<div class="placeholder"></div>
 
 <div class="card-content">
 
 <h4>Adam Lanza</h4>
 
-<span>April 28, 2026</span>
+<span>Case archive</span>
 
 <p>
-Case archive, timeline,
-and educational resources.
+Educational resources,
+public information,
+and discussion archive.
+</p>
+
+<a href="#">
+Read More →
+</a>
+
+</div>
+
+</div>
+
+<!-- card -->
+
+<div class="card">
+
+<div class="placeholder"></div>
+
+<div class="card-content">
+
+<h4>Vladislav Roslyakov</h4>
+
+<span>Case timeline</span>
+
+<p>
+Collected timeline,
+reports,
+and archived discussion.
 </p>
 
 <a href="#">
@@ -928,7 +817,7 @@ Read More →
 
 </div>
 
-<!-- RIGHT -->
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
@@ -937,23 +826,27 @@ Read More →
 <h3>A COMMUNITY FOR AWARENESS</h3>
 
 <p>
-Join discussions, share information,
-and help preserve accurate archives
-while respecting victims and families.
+
+Join discussions,
+share information,
+and help preserve accurate archives.
+
 </p>
 
 <a href="#" class="community-btn">
-JOIN THE COMMUNITY →
+JOIN COMMUNITY →
 </a>
 
 <div class="notice">
 
-<strong>IMPORTANT</strong><br><br>
+<strong>IMPORTANT</strong>
+
+<br><br>
 
 • No glorification of violence<br>
-• No graphic gore uploads<br>
 • No harassment or threats<br>
-• Educational purposes only<br>
+• No graphic gore uploads<br>
+• Educational discussion only<br>
 • Accounts required for comments
 
 </div>
@@ -973,23 +866,23 @@ JOIN THE COMMUNITY →
 <ul>
 
 <li>
-This site exists for educational awareness and archival purposes.
+This site exists for educational and archival purposes.
 </li>
 
 <li>
-Kotjas Archive does not support or glorify violent actions.
+Kotjas Archive does not support violent actions.
 </li>
 
 <li>
-Graphic or exploitative material is prohibited.
+Graphic or exploitative content is prohibited.
 </li>
 
 <li>
-Harassment, threats, and extremist propaganda are forbidden.
+Harassment and extremist propaganda are forbidden.
 </li>
 
 <li>
-Users must be 18+ to access sensitive content or create accounts.
+Users must be 18+ to access sensitive content.
 </li>
 
 </ul>
@@ -1006,7 +899,9 @@ Users must be 18+ to access sensitive content or create accounts.
 
 <div>
 
-<strong>© 2026 KOTJAS ARCHIVE</strong><br>
+<strong>© 2026 KOTJAS ARCHIVE</strong>
+
+<br>
 
 <span style="color:var(--muted)">
 not just stories. real lives.
@@ -1018,17 +913,17 @@ not just stories. real lives.
 
 <div class="footer-links">
 
-<a href="#">PRIVACY POLICY</a>
-<a href="#">TERMS OF SERVICE</a>
-<a href="#">CONTENT POLICY</a>
+<a href="#">
+PRIVACY POLICY
+</a>
 
-</div>
+<a href="#">
+TERMS OF SERVICE
+</a>
 
-<div class="socials">
-
-<div class="social">✉</div>
-<div class="social">☾</div>
-<div class="social">★</div>
+<a href="#">
+CONTENT POLICY
+</a>
 
 </div>
 
@@ -1037,26 +932,28 @@ not just stories. real lives.
 <script>
 
 function openModal(){
+
 document.getElementById("ageModal")
 .style.display = "flex";
+
 }
 
 function closeModal(){
+
 document.getElementById("ageModal")
 .style.display = "none";
+
 }
 
-/* SEARCH */
+/* search */
 
 const cases = {
+
 "samantha rupnow":"samantha-rupnow.html",
 "rina palenkova":"rina-palenkova.html",
 "adam lanza":"adam-lanza.html",
-"vladislav roslyakov":"vladislav-roslyakov.html",
-"pekka":"pekka.html",
-"brenton":"brenton.html",
-"payton":"payton.html",
-"arthur achleithner":"arthur-achleithner.html"
+"vladislav roslyakov":"vladislav-roslyakov.html"
+
 };
 
 document
@@ -1069,9 +966,13 @@ const value =
 this.value.toLowerCase().trim();
 
 if(cases[value]){
+
 window.location.href = cases[value];
+
 }else{
+
 alert("Case not found.");
+
 }
 
 }
