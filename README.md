@@ -1,4 +1,3 @@
-```html id="k92xla"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -350,4 +349,3 @@ document.body.classList.toggle("light-mode");
 
 </body>
 </html>
-```
