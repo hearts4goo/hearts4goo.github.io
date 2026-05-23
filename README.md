@@ -617,7 +617,7 @@ Note from hearts4goo
 </h2>
 
 <p>
-Me and nutelok just are still working on this, dont expect anything to work incase you even found this
+Me and nutelok are still working on this, dont expect anything to work incase you even found this..
 we started this 23/05/2026
 </p>
 
