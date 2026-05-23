@@ -1,9 +1,11 @@
+# index.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Kotjas Archive</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -11,21 +13,25 @@
 <style>
 
 :root{
---bg:#0d0b10;
---card:#17131d;
+--bg:#0c0b10;
+--bg2:#15131b;
+--card:#1b1822;
 --text:#ffeef5;
 --pink:#ff8db4;
---border:#3b2d38;
---accent:#ff5d94;
+--accent:#ff5c97;
+--border:#312737;
+--shadow:rgba(255,141,180,0.15);
 }
 
 .light-mode{
---bg:#fff4f8;
---card:#ffe5ee;
---text:#2d1b25;
+--bg:#fff3f7;
+--bg2:#ffe6ef;
+--card:#fff9fc;
+--text:#2b1d25;
 --pink:#d85b87;
---border:#f2bdd1;
---accent:#b80052;
+--accent:#b10053;
+--border:#efbfd1;
+--shadow:rgba(216,91,135,0.15);
 }
 
 *{
@@ -42,35 +48,54 @@ transition:0.3s;
 overflow-x:hidden;
 }
 
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--pink);
+border-radius:20px;
+}
+
 header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(10,10,10,0.75);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);
+padding:18px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-border-bottom:1px solid var(--border);
-background:rgba(0,0,0,0.2);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:100;
 }
 
 .logo{
-font-size:32px;
 font-family:'Special Elite',cursive;
+font-size:32px;
 color:var(--pink);
+letter-spacing:2px;
+}
+
+.logo small{
+display:block;
+font-size:12px;
+color:var(--text);
+opacity:0.7;
+margin-top:4px;
+font-family:'Quicksand',sans-serif;
 }
 
 nav{
 display:flex;
-gap:25px;
+gap:24px;
 align-items:center;
 }
 
 nav a{
-text-decoration:none;
 color:var(--text);
-font-size:15px;
+text-decoration:none;
+font-size:14px;
 transition:0.2s;
 }
 
@@ -78,55 +103,149 @@ nav a:hover{
 color:var(--pink);
 }
 
-.toggle-btn{
+.toggle{
 background:var(--card);
 border:1px solid var(--border);
-padding:10px 16px;
-border-radius:12px;
 color:var(--text);
+padding:10px 18px;
+border-radius:14px;
 cursor:pointer;
+font-weight:bold;
+}
+
+.layout{
+display:grid;
+grid-template-columns:280px 1fr 320px;
+gap:24px;
+padding:30px;
+}
+
+.sidebar,
+.rightbar{
+position:sticky;
+top:100px;
+height:fit-content;
+}
+
+.panel{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:24px;
+padding:24px;
+margin-bottom:24px;
+box-shadow:0 0 30px var(--shadow);
+}
+
+.panel-title{
+font-family:'Special Elite',cursive;
+font-size:24px;
+margin-bottom:18px;
+color:var(--pink);
+}
+
+.mascot{
+text-align:center;
+}
+
+.mascot img{
+width:100%;
+max-width:220px;
+image-rendering:pixelated;
+filter:drop-shadow(0 0 20px var(--shadow));
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);} 
+50%{transform:translateY(-8px);} 
+100%{transform:translateY(0px);} 
+}
+
+.quote{
+margin-top:16px;
+font-size:15px;
+line-height:1.8;
+opacity:0.9;
+}
+
+.links{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.links a{
+text-decoration:none;
+color:var(--text);
+padding:12px 14px;
+border-radius:14px;
+background:var(--bg2);
+transition:0.2s;
+}
+
+.links a:hover{
+background:var(--pink);
+color:black;
+}
+
+.feed{
+display:flex;
+flex-direction:column;
+gap:24px;
 }
 
 .hero{
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-padding:70px 10%;
-gap:40px;
-min-height:85vh;
+background:linear-gradient(145deg,var(--card),var(--bg2));
+border:1px solid var(--border);
+border-radius:30px;
+padding:50px;
+position:relative;
+overflow:hidden;
 }
 
-.hero-text h1{
+.hero::before{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:var(--pink);
+opacity:0.08;
+border-radius:50%;
+top:-120px;
+right:-120px;
+}
+
+.hero h1{
 font-size:70px;
 line-height:1;
 font-family:'Special Elite',cursive;
 margin-bottom:20px;
 }
 
-.hero-text h1 span{
+.hero h1 span{
 color:var(--pink);
 }
 
-.hero-text p{
-font-size:18px;
-line-height:1.8;
-max-width:600px;
+.hero p{
+max-width:700px;
+line-height:1.9;
+font-size:17px;
 opacity:0.9;
 margin-bottom:30px;
 }
 
 .buttons{
 display:flex;
-gap:20px;
+gap:16px;
 flex-wrap:wrap;
 }
 
 .btn{
 padding:14px 28px;
-border-radius:14px;
+border-radius:16px;
 text-decoration:none;
 font-weight:bold;
-transition:0.25s;
+transition:0.2s;
 }
 
 .primary{
@@ -134,118 +253,151 @@ background:var(--pink);
 color:black;
 }
 
-.primary:hover{
+.secondary{
+background:var(--bg2);
+border:1px solid var(--border);
+color:var(--text);
+}
+
+.btn:hover{
 transform:translateY(-3px);
 }
 
-.secondary{
-border:1px solid var(--border);
-color:var(--text);
+.post{
 background:var(--card);
+border:1px solid var(--border);
+border-radius:24px;
+padding:24px;
+box-shadow:0 0 25px var(--shadow);
 }
 
-.secondary:hover{
-border-color:var(--pink);
-}
-
-.mascot{
+.post-header{
 display:flex;
-justify-content:center;
 align-items:center;
+gap:14px;
+margin-bottom:18px;
 }
 
-.mascot img{
+.avatar{
+width:50px;
+height:50px;
+border-radius:50%;
+background:var(--pink);
+}
+
+.user{
+font-weight:bold;
+}
+
+.tag{
+font-size:13px;
+opacity:0.7;
+}
+
+.post img{
 width:100%;
-max-width:420px;
-image-rendering:pixelated;
-filter:drop-shadow(0 0 25px rgba(255,141,180,0.3));
-animation:float 4s ease-in-out infinite;
+border-radius:18px;
+margin:18px 0;
 }
 
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
-}
-
-.section{
-padding:80px 10%;
-}
-
-.section-title{
-font-size:40px;
-margin-bottom:40px;
+.post h2{
+margin-bottom:14px;
 font-family:'Special Elite',cursive;
 color:var(--pink);
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+.post p{
+line-height:1.9;
+opacity:0.95;
 }
 
-.card{
-background:var(--card);
+.actions{
+display:flex;
+gap:18px;
+margin-top:18px;
+font-size:14px;
+opacity:0.8;
+}
+
+.case-card{
+background:var(--bg2);
+padding:18px;
+border-radius:18px;
 border:1px solid var(--border);
-padding:25px;
-border-radius:20px;
-transition:0.25s;
+margin-bottom:16px;
 }
 
-.card:hover{
-transform:translateY(-5px);
-border-color:var(--pink);
-}
-
-.card h3{
-margin-bottom:15px;
+.case-card h3{
+margin-bottom:10px;
 color:var(--pink);
 }
 
-.card p{
+.case-card p{
+font-size:14px;
 line-height:1.7;
-opacity:0.9;
+}
+
+.warning{
+background:rgba(255,92,151,0.1);
+border:1px solid rgba(255,92,151,0.3);
+padding:18px;
+border-radius:18px;
+line-height:1.8;
+font-size:14px;
 }
 
 footer{
-padding:40px;
+padding:30px;
 text-align:center;
-border-top:1px solid var(--border);
-margin-top:40px;
-opacity:0.7;
+opacity:0.6;
+font-size:14px;
 }
 
-@media(max-width:900px){
-
-.hero{
+@media(max-width:1200px){
+.layout{
 grid-template-columns:1fr;
-text-align:center;
 }
 
-.hero-text h1{
-font-size:52px;
+.sidebar,
+.rightbar{
+position:relative;
+top:0;
+}
 }
 
-.buttons{
-justify-content:center;
+@media(max-width:700px){
+header{
+padding:20px;
+flex-direction:column;
+gap:20px;
 }
 
 nav{
-display:none;
+flex-wrap:wrap;
+justify-content:center;
 }
 
+.hero{
+padding:30px;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.layout{
+padding:18px;
+}
 }
 
 </style>
 </head>
-
 <body>
 
 <header>
-
 <div class="logo">
 KOTJAS ARCHIVE
+<small>record. remember. awareness.</small>
 </div>
 
 <nav>
@@ -254,18 +406,41 @@ KOTJAS ARCHIVE
 <a href="#">Missing</a>
 <a href="#">Timeline</a>
 <a href="#">Community</a>
+<a href="#">Resources</a>
 </nav>
 
-<button class="toggle-btn" onclick="toggleMode()">
+<button class="toggle" onclick="toggleMode()">
 Toggle Theme
 </button>
-
 </header>
 
+<div class="layout">
+
+<aside class="sidebar">
+
+<div class="panel mascot">
+<img src="mascot.png" alt="Mascot">
+<div class="quote">
+truth. awareness. change.
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-title">Navigation</div>
+<div class="links">
+<a href="#">Recent Cases</a>
+<a href="#">Historical Archive</a>
+<a href="#">Community Posts</a>
+<a href="#">Missing Persons</a>
+<a href="#">Safety Resources</a>
+</div>
+</div>
+
+</aside>
+
+<main class="feed">
+
 <section class="hero">
-
-<div class="hero-text">
-
 <h1>
 truth.<br>
 awareness.<br>
@@ -273,78 +448,105 @@ awareness.<br>
 </h1>
 
 <p>
-Kotjas Archive documents crimes, disappearances,
-and tragedies for awareness and education.
-A place for research, discussion, timelines,
-and community remembrance.
+Kotjas Archive is a community-driven awareness project documenting crimes, disappearances, and tragedies through timelines, discussions, archives, and educational resources.
 </p>
 
 <div class="buttons">
-
-<a href="#" class="btn primary">
-Explore Cases
-</a>
-
-<a href="#" class="btn secondary">
-Join Community
-</a>
-
+<a href="#" class="btn primary">Explore Cases</a>
+<a href="#" class="btn secondary">Join Community</a>
 </div>
-
-</div>
-
-<div class="mascot">
-<img src="mascot.png" alt="Mascot">
-</div>
-
 </section>
 
-<section class="section">
+<article class="post">
+<div class="post-header">
+<div class="avatar"></div>
+<div>
+<div class="user">Kotjas Archive</div>
+<div class="tag">featured archive post</div>
+</div>
+</div>
 
-<h2 class="section-title">
-Recent Cases
-</h2>
+<h2>Recent Community Discussion</h2>
 
-<div class="cards">
+<p>
+Users can discuss timelines, theories, safety awareness, and verified updates in a moderated environment focused on education and remembrance.
+</p>
 
-<div class="card">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Dark forest">
+
+<p>
+This layout mixes fandom-style archives with Tumblr-inspired community posting and scrolling discussions.
+</p>
+
+<div class="actions">
+<span>♡ 2.4k likes</span>
+<span>✎ 184 comments</span>
+<span>↻ share</span>
+</div>
+</article>
+
+<article class="post">
+<div class="post-header">
+<div class="avatar"></div>
+<div>
+<div class="user">Moderator Team</div>
+<div class="tag">community update</div>
+</div>
+</div>
+
+<h2>Community Guidelines</h2>
+
+<p>
+We do not glorify violence or share graphic material. The purpose of this archive is awareness, documentation, education, and respectful discussion.
+</p>
+
+<div class="actions">
+<span>♡ 891 likes</span>
+<span>✎ 72 comments</span>
+</div>
+</article>
+
+</main>
+
+<aside class="rightbar">
+
+<div class="panel">
+<div class="panel-title">Trending Cases</div>
+
+<div class="case-card">
 <h3>City Mall Shooting</h3>
-<p>
-Archive documenting the timeline,
-investigation, and aftermath.
-</p>
+<p>Timeline archive and ongoing discussion thread.</p>
 </div>
 
-<div class="card">
+<div class="case-card">
 <h3>Riverside Disappearance</h3>
-<p>
-Case files, witness statements,
-and community discussion.
-</p>
+<p>Community research and evidence timeline.</p>
 </div>
 
-<div class="card">
+<div class="case-card">
 <h3>Oakwood Murders</h3>
-<p>
-Historical archive preserving
-details and timelines.
-</p>
+<p>Historical case archive with witness reports.</p>
 </div>
 
 </div>
 
-</section>
+<div class="panel warning">
+<strong>Important:</strong><br><br>
+This site discusses real crimes and tragedies for awareness and educational purposes. Graphic content, harassment, glorification, and misinformation are prohibited.
+</div>
+
+</aside>
+
+</div>
 
 <footer>
-Kotjas Archive • awareness project
+Kotjas Archive • community awareness project
 </footer>
 
 <script>
-
 function toggleMode(){
-document.body.classList.toggle("light-mode");
+document.body.classList.toggle('light-mode');
 }
-
 </script>
 
 </body>
