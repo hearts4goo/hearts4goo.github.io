@@ -56,13 +56,169 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:22px 45px;
+padding:18px 30px;
 border-bottom:1px solid rgba(255,255,255,.08);
-background:rgba(0,0,0,.45);
+background:rgba(0,0,0,.55);
 backdrop-filter:blur(8px);
 position:sticky;
 top:0;
 z-index:999;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* LEFT */
+
+.logo-wrap{
+display:flex;
+align-items:center;
+gap:14px;
+min-width:220px;
+}
+
+.logo-icon{
+width:46px;
+height:46px;
+border:1px solid var(--border);
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:8px;
+background:rgba(255,255,255,.02);
+font-size:18px;
+flex-shrink:0;
+}
+
+.logo h1{
+font-family:'Special Elite',cursive;
+font-size:32px;
+color:var(--pink);
+letter-spacing:1px;
+line-height:1;
+}
+
+.logo p{
+font-size:11px;
+margin-top:6px;
+color:var(--muted);
+}
+
+/* NAV */
+
+nav{
+display:flex;
+gap:18px;
+align-items:center;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+text-decoration:none;
+color:var(--text);
+font-size:13px;
+position:relative;
+padding-bottom:4px;
+white-space:nowrap;
+}
+
+nav a:hover{
+color:var(--pink);
+}
+
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:2px;
+background:var(--pink);
+}
+
+/* RIGHT SIDE */
+
+.right-nav{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+justify-content:flex-end;
+}
+
+/* SEARCH */
+
+.search{
+background:rgba(255,255,255,.03);
+border:1px solid var(--border);
+padding:10px 12px;
+border-radius:6px;
+color:white;
+width:160px;
+font-size:13px;
+}
+
+/* BUTTONS */
+
+.top-btn{
+padding:10px 18px;
+border:1px solid var(--border);
+background:transparent;
+color:var(--text);
+cursor:pointer;
+font-family:'IBM Plex Mono',monospace;
+transition:.2s;
+font-size:13px;
+}
+
+.top-btn:hover{
+background:var(--pink);
+color:black;
+}
+
+.signup{
+background:var(--pink);
+color:black;
+}
+
+/* MOBILE */
+
+@media(max-width:1200px){
+
+header{
+justify-content:center;
+}
+
+nav{
+width:100%;
+}
+
+.right-nav{
+width:100%;
+justify-content:center;
+}
+
+}
+
+@media(max-width:700px){
+
+.logo h1{
+font-size:24px;
+}
+
+.search{
+width:100%;
+}
+
+.right-nav{
+flex-direction:column;
+align-items:stretch;
+}
+
+.top-btn{
+width:100%;
+}
+
 }
 
 .logo-wrap{
