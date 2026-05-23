@@ -11,542 +11,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
---bg:#0c0b10;
---bg2:#15131b;
---card:#1b1822;
---text:#ffeef5;
---pink:#ff8db4;
---accent:#ff5c97;
---border:#312737;
---shadow:rgba(255,141,180,0.15);
+--bg:#120d14;
+--bg2:#1a1320;
+--card:#211826;
+--text:#ffeef6;
+--pink:#ff9dc0;
+--accent:#ff5d95;
+--border:#3d2d3f;
 }
-
 .light-mode{
---bg:#fff3f7;
---bg2:#ffe6ef;
---card:#fff9fc;
---text:#2b1d25;
---pink:#d85b87;
---accent:#b10053;
---border:#efbfd1;
---shadow:rgba(216,91,135,0.15);
+--bg:#fff6fa;
+--bg2:#ffe7f0;
+--card:#fffafb;
+--text:#2a1d26;
+--pink:#cf5e88;
+--accent:#a70052;
+--border:#edbfd0;
 }
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:var(--bg);
-color:var(--text);
-font-family:'Quicksand',sans-serif;
-transition:0.3s;
-overflow-x:hidden;
-}
-
-::-webkit-scrollbar{
-width:10px;
-}
-
-::-webkit-scrollbar-thumb{
-background:var(--pink);
-border-radius:20px;
-}
-
-header{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(10,10,10,0.75);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);
-padding:18px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-family:'Special Elite',cursive;
-font-size:32px;
-color:var(--pink);
-letter-spacing:2px;
-}
-
-.logo small{
-display:block;
-font-size:12px;
-color:var(--text);
-opacity:0.7;
-margin-top:4px;
-font-family:'Quicksand',sans-serif;
-}
-
-nav{
-display:flex;
-gap:24px;
-align-items:center;
-}
-
-nav a{
-color:var(--text);
-text-decoration:none;
-font-size:14px;
-transition:0.2s;
-}
-
-nav a:hover{
-color:var(--pink);
-}
-
-.toggle{
-background:var(--card);
-border:1px solid var(--border);
-color:var(--text);
-padding:10px 18px;
-border-radius:14px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.layout{
-display:grid;
-grid-template-columns:280px 1fr 320px;
-gap:24px;
-padding:30px;
-}
-
-.sidebar,
-.rightbar{
-position:sticky;
-top:100px;
-height:fit-content;
-}
-
-.panel{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:24px;
-padding:24px;
-margin-bottom:24px;
-box-shadow:0 0 30px var(--shadow);
-}
-
-.panel-title{
-font-family:'Special Elite',cursive;
-font-size:24px;
-margin-bottom:18px;
-color:var(--pink);
-}
-
-.mascot{
-text-align:center;
-}
-
-.mascot img{
-width:100%;
-max-width:220px;
-image-rendering:pixelated;
-filter:drop-shadow(0 0 20px var(--shadow));
-animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0px);} 
-50%{transform:translateY(-8px);} 
-100%{transform:translateY(0px);} 
-}
-
-.quote{
-margin-top:16px;
-font-size:15px;
-line-height:1.8;
-opacity:0.9;
-}
-
-.links{
-display:flex;
-flex-direction:column;
-gap:14px;
-}
-
-.links a{
-text-decoration:none;
-color:var(--text);
-padding:12px 14px;
-border-radius:14px;
-background:var(--bg2);
-transition:0.2s;
-}
-
-.links a:hover{
-background:var(--pink);
-color:black;
-}
-
-.feed{
-display:flex;
-flex-direction:column;
-gap:24px;
-}
-
-.hero{
-background:linear-gradient(145deg,var(--card),var(--bg2));
-border:1px solid var(--border);
-border-radius:30px;
-padding:50px;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:300px;
-height:300px;
-background:var(--pink);
-opacity:0.08;
-border-radius:50%;
-top:-120px;
-right:-120px;
-}
-
-.hero h1{
-font-size:70px;
-line-height:1;
-font-family:'Special Elite',cursive;
-margin-bottom:20px;
-}
-
-.hero h1 span{
-color:var(--pink);
-}
-
-.hero p{
-max-width:700px;
-line-height:1.9;
-font-size:17px;
-opacity:0.9;
-margin-bottom:30px;
-}
-
-.buttons{
-display:flex;
-gap:16px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:14px 28px;
-border-radius:16px;
-text-decoration:none;
-font-weight:bold;
-transition:0.2s;
-}
-
-.primary{
-background:var(--pink);
-color:black;
-}
-
-.secondary{
-background:var(--bg2);
-border:1px solid var(--border);
-color:var(--text);
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.post{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:24px;
-padding:24px;
-box-shadow:0 0 25px var(--shadow);
-}
-
-.post-header{
-display:flex;
-align-items:center;
-gap:14px;
-margin-bottom:18px;
-}
-
-.avatar{
-width:50px;
-height:50px;
-border-radius:50%;
-background:var(--pink);
-}
-
-.user{
-font-weight:bold;
-}
-
-.tag{
-font-size:13px;
-opacity:0.7;
-}
-
-.post img{
-width:100%;
-border-radius:18px;
-margin:18px 0;
-}
-
-.post h2{
-margin-bottom:14px;
-font-family:'Special Elite',cursive;
-color:var(--pink);
-}
-
-.post p{
-line-height:1.9;
-opacity:0.95;
-}
-
-.actions{
-display:flex;
-gap:18px;
-margin-top:18px;
-font-size:14px;
-opacity:0.8;
-}
-
-.case-card{
-background:var(--bg2);
-padding:18px;
-border-radius:18px;
-border:1px solid var(--border);
-margin-bottom:16px;
-}
-
-.case-card h3{
-margin-bottom:10px;
-color:var(--pink);
-}
-
-.case-card p{
-font-size:14px;
-line-height:1.7;
-}
-
-.warning{
-background:rgba(255,92,151,0.1);
-border:1px solid rgba(255,92,151,0.3);
-padding:18px;
-border-radius:18px;
-line-height:1.8;
-font-size:14px;
-}
-
-footer{
-padding:30px;
-text-align:center;
-opacity:0.6;
-font-size:14px;
-}
-
-@media(max-width:1200px){
-.layout{
-grid-template-columns:1fr;
-}
-
-.sidebar,
-.rightbar{
-position:relative;
-top:0;
-}
-}
-
-@media(max-width:700px){
-header{
-padding:20px;
-flex-direction:column;
-gap:20px;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero{
-padding:30px;
-}
-
-.hero h1{
-font-size:48px;
-}
-
-.layout{
-padding:18px;
-}
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:linear-gradient(var(--bg),#0f0a12);color:var(--text);font-family:'Quicksand',sans-serif;overflow-x:hidden;transition:.3s;}
+header{position:sticky;top:0;z-index:999;background:rgba(20,10,18,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:18px 30px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Special Elite',cursive;font-size:30px;color:var(--pink);}
+.logo small{display:block;font-size:12px;opacity:.7;margin-top:4px;}
+nav{display:flex;gap:22px;align-items:center;}
+nav a{text-decoration:none;color:var(--text);font-size:14px;}
+.toggle{background:var(--card);border:1px solid var(--border);padding:10px 16px;border-radius:14px;color:var(--text);cursor:pointer;}
+.layout{display:grid;grid-template-columns:260px 1fr 320px;gap:24px;padding:30px;}
+.panel,.post,.hero{background:rgba(33,24,38,.92);border:1px solid var(--border);border-radius:28px;}
+.panel{padding:22px;margin-bottom:24px;}
+.sidebar,.rightbar{position:sticky;top:95px;height:fit-content;}
+.panel-title{font-family:'Special Elite',cursive;font-size:24px;margin-bottom:16px;color:var(--pink);}
+.mascot{text-align:center;}.mascot img{width:100%;max-width:220px;image-rendering:pixelated;}
+.quote{margin-top:14px;line-height:1.8;font-size:15px;}
+.links{display:flex;flex-direction:column;gap:12px;}
+.links a{background:var(--bg2);padding:12px 14px;border-radius:14px;text-decoration:none;color:var(--text);}
+.feed{display:flex;flex-direction:column;gap:24px;}
+.hero{padding:50px;}
+.hero h1{font-size:62px;line-height:1.05;font-family:'Special Elite',cursive;margin-bottom:20px;}
+.hero h1 span{color:var(--pink);}
+.hero p{line-height:1.9;font-size:17px;max-width:700px;margin-bottom:28px;}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{padding:14px 26px;border-radius:16px;text-decoration:none;font-weight:bold;}
+.primary{background:var(--pink);color:black;}.secondary{background:var(--bg2);border:1px solid var(--border);color:var(--text);}
+.search-box{margin-top:25px;display:flex;gap:10px;}.search-box input{flex:1;padding:14px;border-radius:14px;border:1px solid var(--border);background:var(--bg2);color:var(--text);} .search-box button{padding:14px 20px;border:none;border-radius:14px;background:var(--pink);cursor:pointer;}
+.post{padding:24px;}.post-header{display:flex;align-items:center;gap:14px;margin-bottom:18px;}.avatar{width:50px;height:50px;border-radius:50%;background:var(--pink);} .post h2{font-family:'Special Elite',cursive;margin-bottom:16px;color:var(--pink);} .post p{line-height:1.9;} .actions{display:flex;gap:18px;margin-top:18px;font-size:14px;opacity:.8;}
+.case-card{background:var(--bg2);padding:16px;border-radius:18px;margin-bottom:14px;border:1px solid var(--border);} .case-card h3{color:var(--pink);} .rules{line-height:1.9;font-size:14px;}
+.age-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:2000;}.modal-box{background:var(--card);padding:35px;border-radius:24px;max-width:450px;width:90%;text-align:center;border:1px solid var(--border);} .modal-box h2{margin-bottom:16px;font-family:'Special Elite',cursive;color:var(--pink);} .modal-box p{line-height:1.8;margin-bottom:20px;} .modal-box button{margin:6px;padding:12px 20px;border:none;border-radius:12px;cursor:pointer;font-weight:bold;} .confirm{background:var(--pink);} .cancel{background:var(--bg2);color:var(--text);border:1px solid var(--border);}
+footer{padding:30px;text-align:center;opacity:.6;}
+@media(max-width:1200px){.layout{grid-template-columns:1fr;}.sidebar,.rightbar{position:relative;top:0;}}
+@media(max-width:700px){header{flex-direction:column;gap:20px;}nav{flex-wrap:wrap;justify-content:center;}.hero h1{font-size:44px;}.layout{padding:18px;}.hero{padding:30px;}}
 </style>
 </head>
 <body>
-
-<header>
-<div class="logo">
-KOTJAS ARCHIVE
-<small>record. remember. awareness.</small>
-</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Cases</a>
-<a href="#">Missing</a>
-<a href="#">Timeline</a>
-<a href="#">Community</a>
-<a href="#">Resources</a>
-</nav>
-
-<button class="toggle" onclick="toggleMode()">
-Toggle Theme
-</button>
-</header>
-
+<div class="age-modal" id="ageModal"><div class="modal-box"><h2>18+ Confirmation</h2><p>This site discusses real crimes and disturbing events for awareness and educational purposes. You must be 18 or older to create an account and access sensitive content.</p><button class="confirm" onclick="closeModal()">I am 18+</button><button class="cancel" onclick="closeModal()">Cancel</button></div></div>
+<header><div class="logo">KOTJAS ARCHIVE<small>remember the victims. document the truth.</small></div><nav><a href="#">Home</a><a href="#">Cases</a><a href="#">Timeline</a><a href="#">Community</a><a href="#">Rules</a></nav><button class="toggle" onclick="toggleMode()">Toggle Theme</button></header>
 <div class="layout">
-
 <aside class="sidebar">
-
-<div class="panel mascot">
-<img src="mascot.png" alt="Mascot">
-<div class="quote">
-truth. awareness. change.
-</div>
-</div>
-
-<div class="panel">
-<div class="panel-title">Navigation</div>
-<div class="links">
-<a href="#">Recent Cases</a>
-<a href="#">Historical Archive</a>
-<a href="#">Community Posts</a>
-<a href="#">Missing Persons</a>
-<a href="#">Safety Resources</a>
-</div>
-</div>
-
+<div class="panel mascot"><img src="mascot.png" alt="Mascot"><div class="quote">archive. awareness. remembrance.</div></div>
+<div class="panel"><div class="panel-title">Navigation</div><div class="links"><a href="#">Recent Cases</a><a href="#">Historical Archive</a><a href="#">Community Posts</a><a href="#">Missing Persons</a><a href="#">Account Login</a></div></div>
 </aside>
-
 <main class="feed">
-
-<section class="hero">
-<h1>
-truth.<br>
-awareness.<br>
-<span>change.</span>
-</h1>
-
-<p>
-Kotjas Archive is a community-driven awareness project documenting crimes, disappearances, and tragedies through timelines, discussions, archives, and educational resources.
-</p>
-
-<div class="buttons">
-<a href="#" class="btn primary">Explore Cases</a>
-<a href="#" class="btn secondary">Join Community</a>
-</div>
-</section>
-
-<article class="post">
-<div class="post-header">
-<div class="avatar"></div>
-<div>
-<div class="user">Kotjas Archive</div>
-<div class="tag">featured archive post</div>
-</div>
-</div>
-
-<h2>Recent Community Discussion</h2>
-
-<p>
-Users can discuss timelines, theories, safety awareness, and verified updates in a moderated environment focused on education and remembrance.
-</p>
-
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Dark forest">
-
-<p>
-This layout mixes fandom-style archives with Tumblr-inspired community posting and scrolling discussions.
-</p>
-
-<div class="actions">
-<span>♡ 2.4k likes</span>
-<span>✎ 184 comments</span>
-<span>↻ share</span>
-</div>
-</article>
-
-<article class="post">
-<div class="post-header">
-<div class="avatar"></div>
-<div>
-<div class="user">Moderator Team</div>
-<div class="tag">community update</div>
-</div>
-</div>
-
-<h2>Community Guidelines</h2>
-
-<p>
-We do not glorify violence or share graphic material. The purpose of this archive is awareness, documentation, education, and respectful discussion.
-</p>
-
-<div class="actions">
-<span>♡ 891 likes</span>
-<span>✎ 72 comments</span>
-</div>
-</article>
-
+<section class="hero"><h1>archive the past.<br>learn the patterns.<br><span>prevent the future.</span></h1><p>Kotjas Archive is a community-based awareness project documenting crimes, disappearances, attacks, and tragedies through timelines, discussions, and educational resources. This site does not condone violence or extremist ideologies.</p><div class="buttons"><a href="#" class="btn primary">Explore Cases</a><a href="#" class="btn secondary" onclick="openModal()">Create Account</a></div><div class="search-box"><input type="text" id="searchInput" placeholder="Search cases..."><button onclick="searchCase()">Search</button></div></section>
+<article class="post"><div class="post-header"><div class="avatar"></div><div><div class="user">Latest Archive Post</div><div class="tag">newest case update</div></div></div><h2>Samantha Rupnow Archive Added</h2><p>New timeline documentation, public reports, discussions, and educational resources regarding the case have been added to the archive.</p><div class="actions"><span>♡ 3.1k likes</span><span>✎ 402 comments</span></div></article>
+<article class="post"><div class="post-header"><div class="avatar"></div><div><div class="user">Community Notice</div><div class="tag">moderation update</div></div></div><h2>Content Policy</h2><p>Kotjas Archive does not glorify violence, extremist ideologies, or perpetrators. Graphic content, harassment, and misinformation are prohibited.</p><div class="actions"><span>♡ 1.2k likes</span><span>✎ 88 comments</span></div></article>
 </main>
-
-<aside class="rightbar">
-
-<div class="panel">
-<div class="panel-title">Trending Cases</div>
-
-<div class="case-card">
-<h3>City Mall Shooting</h3>
-<p>Timeline archive and ongoing discussion thread.</p>
-</div>
-
-<div class="case-card">
-<h3>Riverside Disappearance</h3>
-<p>Community research and evidence timeline.</p>
-</div>
-
-<div class="case-card">
-<h3>Oakwood Murders</h3>
-<p>Historical case archive with witness reports.</p>
-</div>
-
-</div>
-
-<div class="panel warning">
-<strong>Important:</strong><br><br>
-This site discusses real crimes and tragedies for awareness and educational purposes. Graphic content, harassment, glorification, and misinformation are prohibited.
-</div>
-
-</aside>
-
-</div>
-
-<footer>
-Kotjas Archive • community awareness project
-</footer>
-
+<aside class="rightbar"><div class="panel"><div class="panel-title">Searchable Cases</div><div class="case-card"><h3>Vova and Vika Stepsiblings</h3></div><div class="case-card"><h3>Samantha Rupnow</h3></div><div class="case-card"><h3>Rina Palenkova</h3></div><div class="case-card"><h3>Vladislav Roslyakov</h3></div><div class="case-card"><h3>Pekka</h3></div><div class="case-card"><h3>Brenton</h3></div><div class="case-card"><h3>Payton</h3></div><div class="case-card"><h3>Adam Lanza</h3></div><div class="case-card"><h3>Arthur Achleithner</h3></div></div><div class="panel rules"><div class="panel-title">Rules</div>No glorification of violence.<br>No harassment or threats.<br>No graphic gore uploads.<br>No misinformation or conspiracy spam.<br>Educational discussion only.<br>Accounts required to comment or access sensitive footage.</div></aside></div>
+<footer>Kotjas Archive • awareness project • this site does not condone violent actions</footer>
 <script>
-function toggleMode(){
-document.body.classList.toggle('light-mode');
-}
+function toggleMode(){document.body.classList.toggle('light-mode');}
+function openModal(){document.getElementById('ageModal').style.display='flex';}
+function closeModal(){document.getElementById('ageModal').style.display='none';}
+const cases=['vova and vika stepsiblings','samantha rupnow','rina palenkova','vladislav roslyakov','pekka','brenton','payton','adam lanza','arthur achleithner'];
+function searchCase(){const input=document.getElementById('searchInput').value.toLowerCase();if(cases.includes(input)){alert('Opening archive page for: '+input);}else{alert('Case not found.');}}
 </script>
 
 </body>
