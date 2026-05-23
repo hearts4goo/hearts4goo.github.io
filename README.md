@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,33 +11,23 @@
 <style>
 
 :root{
-
 --bg:#120d14;
 --bg2:#1a1320;
 --card:#211826;
-
 --text:#ffeef6;
-
 --pink:#ff9dc0;
 --accent:#ff5d95;
-
 --border:#3d2d3f;
-
 }
 
 .light-mode{
-
 --bg:#fff6fa;
 --bg2:#ffe7f0;
 --card:#fffafb;
-
 --text:#2a1d26;
-
 --pink:#cf5e88;
 --accent:#a70052;
-
 --border:#edbfd0;
-
 }
 
 *{
@@ -49,21 +37,14 @@ box-sizing:border-box;
 }
 
 body{
-
-background:
-linear-gradient(var(--bg),#0f0a12);
-
+background:linear-gradient(var(--bg),#0f0a12);
 color:var(--text);
-
 font-family:'Quicksand',sans-serif;
-
 overflow-x:hidden;
-
 transition:.3s;
-
 }
 
-/* HEADER */
+/* TOP BAR */
 
 header{
 
@@ -71,71 +52,85 @@ position:sticky;
 top:0;
 z-index:999;
 
-background:rgba(20,10,18,.82);
+background:rgba(20,10,18,.92);
 
 backdrop-filter:blur(14px);
 
 border-bottom:1px solid var(--border);
 
-padding:20px 28px;
+padding:18px 30px;
 
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
 gap:30px;
 
 }
 
-.logo{
+/* SEARCH */
 
-font-family:'Special Elite',cursive;
-
-font-size:30px;
-
-color:var(--pink);
-
-min-width:260px;
-
-}
-
-.logo small{
-
-display:block;
-
-font-size:12px;
-
-opacity:.7;
-
-margin-top:6px;
-
-font-family:'Quicksand',sans-serif;
-
-}
-
-.topbar{
+.search-header{
 
 display:flex;
 
 align-items:center;
 
-justify-content:space-between;
+gap:12px;
 
 width:100%;
 
-gap:25px;
+max-width:700px;
 
 }
+
+.search-header input{
+
+flex:1;
+
+padding:15px 18px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+background:var(--bg2);
+
+color:var(--text);
+
+font-size:15px;
+
+outline:none;
+
+}
+
+.search-header button{
+
+padding:15px 20px;
+
+border:none;
+
+border-radius:18px;
+
+background:var(--pink);
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+/* NAVIGATION */
 
 nav{
 
 display:flex;
 
-gap:24px;
+gap:26px;
 
 align-items:center;
-
-flex-wrap:wrap;
 
 }
 
@@ -145,67 +140,21 @@ text-decoration:none;
 
 color:var(--text);
 
-font-size:14px;
-
-padding-bottom:5px;
-
-border-bottom:2px solid transparent;
+font-size:15px;
 
 transition:.2s;
+
+padding-bottom:4px;
+
+border-bottom:2px solid transparent;
 
 }
 
 nav a:hover{
 
-border-color:var(--pink);
-
 color:var(--pink);
 
-}
-
-.search-top{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-margin-left:auto;
-
-}
-
-.search-top input{
-
-width:260px;
-
-padding:13px 15px;
-
-border-radius:14px;
-
-border:1px solid var(--border);
-
-background:var(--bg2);
-
-color:var(--text);
-
-outline:none;
-
-}
-
-.search-top button{
-
-padding:13px 18px;
-
-border:none;
-
-border-radius:14px;
-
-background:var(--pink);
-
-cursor:pointer;
-
-font-weight:bold;
+border-color:var(--pink);
 
 }
 
@@ -222,6 +171,8 @@ gap:24px;
 padding:30px;
 
 }
+
+/* PANELS */
 
 .panel,
 .post,
@@ -247,9 +198,7 @@ margin-bottom:24px;
 .rightbar{
 
 position:sticky;
-
 top:95px;
-
 height:fit-content;
 
 }
@@ -282,7 +231,7 @@ max-width:220px;
 
 image-rendering:pixelated;
 
-border-radius:20px;
+border-radius:18px;
 
 }
 
@@ -296,7 +245,7 @@ font-size:15px;
 
 }
 
-/* SIDEBAR LINKS */
+/* LINKS */
 
 .links{
 
@@ -319,16 +268,6 @@ border-radius:14px;
 text-decoration:none;
 
 color:var(--text);
-
-transition:.2s;
-
-}
-
-.links a:hover{
-
-background:var(--pink);
-
-color:black;
 
 }
 
@@ -382,6 +321,8 @@ margin-bottom:28px;
 
 }
 
+/* BUTTONS */
+
 .buttons{
 
 display:flex;
@@ -402,8 +343,6 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.2s;
-
 }
 
 .primary{
@@ -421,12 +360,6 @@ background:var(--bg2);
 border:1px solid var(--border);
 
 color:var(--text);
-
-}
-
-.btn:hover{
-
-transform:translateY(-2px);
 
 }
 
@@ -454,9 +387,7 @@ margin-bottom:18px;
 
 width:50px;
 height:50px;
-
 border-radius:50%;
-
 background:var(--pink);
 
 }
@@ -495,8 +426,6 @@ opacity:.8;
 
 .case-card{
 
-display:block;
-
 background:var(--bg2);
 
 padding:16px;
@@ -507,9 +436,7 @@ margin-bottom:14px;
 
 border:1px solid var(--border);
 
-text-decoration:none;
-
-color:var(--text);
+cursor:pointer;
 
 transition:.2s;
 
@@ -644,85 +571,49 @@ opacity:.6;
 @media(max-width:1200px){
 
 .layout{
-
 grid-template-columns:1fr;
-
 }
 
 .sidebar,
 .rightbar{
-
 position:relative;
-
 top:0;
-
-}
-
-}
-
-@media(max-width:900px){
-
-header{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-}
-
-.topbar{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-width:100%;
-
-}
-
-.search-top{
-
-width:100%;
-
-}
-
-.search-top input{
-
-width:100%;
-
 }
 
 }
 
 @media(max-width:700px){
 
+header{
+flex-direction:column;
+align-items:stretch;
+}
+
+nav{
+justify-content:center;
+flex-wrap:wrap;
+}
+
 .hero h1{
-
 font-size:44px;
-
 }
 
 .layout{
-
 padding:18px;
-
 }
 
 .hero{
-
 padding:30px;
-
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- MODAL -->
+<!-- AGE MODAL -->
 
 <div class="age-modal" id="ageModal">
 
@@ -731,11 +622,8 @@ padding:30px;
 <h2>18+ Confirmation</h2>
 
 <p>
-
 This site discusses real crimes and disturbing events for awareness and educational purposes.
-
 You must be 18 or older to create an account and access sensitive content.
-
 </p>
 
 <button class="confirm" onclick="closeModal()">
@@ -747,24 +635,25 @@ Cancel
 </button>
 
 </div>
-
 </div>
 
 <!-- HEADER -->
 
 <header>
 
-<div class="logo">
+<div class="search-header">
 
-KOTJAS ARCHIVE
+<input
+type="text"
+id="searchInput"
+placeholder="Search cases..."
+>
 
-<small>
-remember the victims. document the truth.
-</small>
+<button onclick="searchCase()">
+Search
+</button>
 
 </div>
-
-<div class="topbar">
 
 <nav>
 
@@ -780,29 +669,13 @@ remember the victims. document the truth.
 
 </nav>
 
-<div class="search-top">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search cases..."
->
-
-<button onclick="searchCase()">
-Search
-</button>
-
-</div>
-
-</div>
-
 </header>
 
-<!-- MAIN -->
+<!-- MAIN LAYOUT -->
 
 <div class="layout">
 
-<!-- LEFT -->
+<!-- LEFT SIDEBAR -->
 
 <aside class="sidebar">
 
@@ -825,14 +698,10 @@ Navigation
 <div class="links">
 
 <a href="#">Recent Cases</a>
-
 <a href="#">Historical Archive</a>
-
 <a href="#">Community Posts</a>
-
 <a href="#">Missing Persons</a>
-
-<a href="#">Account Login</a>
+<a href="#" onclick="openModal()">Account Login</a>
 
 </div>
 
@@ -840,32 +709,23 @@ Navigation
 
 </aside>
 
-<!-- CENTER -->
+<!-- FEED -->
 
 <main class="feed">
 
 <section class="hero">
 
 <h1>
-
-archive the past.
-<br>
-
-learn the patterns.
-<br>
-
-<span>
-prevent the future.
-</span>
-
+archive the past.<br>
+learn the patterns.<br>
+<span>prevent the future.</span>
 </h1>
 
 <p>
-
-Kotjas Archive is a community-based awareness project documenting crimes, disappearances, attacks, and tragedies through timelines, discussions, and educational resources.
-
+Kotjas Archive is a community-based awareness project documenting crimes,
+disappearances, attacks, and tragedies through timelines, discussions,
+and educational resources.
 This site does not condone violence or extremist ideologies.
-
 </p>
 
 <div class="buttons">
@@ -882,7 +742,7 @@ Create Account
 
 </section>
 
-<!-- POST -->
+<!-- POSTS -->
 
 <article class="post">
 
@@ -909,26 +769,18 @@ Samantha Rupnow Archive Added
 </h2>
 
 <p>
-
-New timeline documentation, public reports, discussions, and educational resources regarding the case have been added to the archive.
-
+New timeline documentation, public reports, discussions,
+and educational resources regarding the case have been added to the archive.
 </p>
 
 <div class="actions">
 
-<span>
-♡ 3.1k likes
-</span>
-
-<span>
-✎ 402 comments
-</span>
+<span>♡ 3.1k likes</span>
+<span>✎ 402 comments</span>
 
 </div>
 
 </article>
-
-<!-- POST -->
 
 <article class="post">
 
@@ -955,22 +807,15 @@ Content Policy
 </h2>
 
 <p>
-
-Kotjas Archive does not glorify violence, extremist ideologies, or perpetrators.
-
+Kotjas Archive does not glorify violence,
+extremist ideologies, or perpetrators.
 Graphic content, harassment, and misinformation are prohibited.
-
 </p>
 
 <div class="actions">
 
-<span>
-♡ 1.2k likes
-</span>
-
-<span>
-✎ 88 comments
-</span>
+<span>♡ 1.2k likes</span>
+<span>✎ 88 comments</span>
 
 </div>
 
@@ -978,7 +823,7 @@ Graphic content, harassment, and misinformation are prohibited.
 
 </main>
 
-<!-- RIGHT -->
+<!-- RIGHT SIDEBAR -->
 
 <aside class="rightbar">
 
@@ -988,41 +833,41 @@ Graphic content, harassment, and misinformation are prohibited.
 Searchable Cases
 </div>
 
-<a href="vova-vika.html" class="case-card">
+<div class="case-card" onclick="openCase('Vova and Vika Stepsiblings')">
 <h3>Vova and Vika Stepsiblings</h3>
-</a>
+</div>
 
-<a href="samantha-rupnow.html" class="case-card">
+<div class="case-card" onclick="openCase('Samantha Rupnow')">
 <h3>Samantha Rupnow</h3>
-</a>
+</div>
 
-<a href="rina-palenkova.html" class="case-card">
+<div class="case-card" onclick="openCase('Rina Palenkova')">
 <h3>Rina Palenkova</h3>
-</a>
+</div>
 
-<a href="vladislav-roslyakov.html" class="case-card">
+<div class="case-card" onclick="openCase('Vladislav Roslyakov')">
 <h3>Vladislav Roslyakov</h3>
-</a>
+</div>
 
-<a href="pekka.html" class="case-card">
+<div class="case-card" onclick="openCase('Pekka')">
 <h3>Pekka</h3>
-</a>
+</div>
 
-<a href="brenton.html" class="case-card">
+<div class="case-card" onclick="openCase('Brenton')">
 <h3>Brenton</h3>
-</a>
+</div>
 
-<a href="payton.html" class="case-card">
+<div class="case-card" onclick="openCase('Payton')">
 <h3>Payton</h3>
-</a>
+</div>
 
-<a href="adam-lanza.html" class="case-card">
+<div class="case-card" onclick="openCase('Adam Lanza')">
 <h3>Adam Lanza</h3>
-</a>
+</div>
 
-<a href="arthur-achleithner.html" class="case-card">
+<div class="case-card" onclick="openCase('Arthur Achleithner')">
 <h3>Arthur Achleithner</h3>
-</a>
+</div>
 
 </div>
 
@@ -1032,21 +877,11 @@ Searchable Cases
 Rules
 </div>
 
-No glorification of violence.
-<br>
-
-No harassment or threats.
-<br>
-
-No graphic gore uploads.
-<br>
-
-No misinformation or conspiracy spam.
-<br>
-
-Educational discussion only.
-<br>
-
+No glorification of violence.<br>
+No harassment or threats.<br>
+No graphic gore uploads.<br>
+No misinformation or conspiracy spam.<br>
+Educational discussion only.<br>
 Accounts required to comment or access sensitive footage.
 
 </div>
@@ -1056,9 +891,7 @@ Accounts required to comment or access sensitive footage.
 </div>
 
 <footer>
-
 Kotjas Archive • awareness project • this site does not condone violent actions
-
 </footer>
 
 <script>
@@ -1071,45 +904,34 @@ document.body.classList.toggle('light-mode');
 
 function openModal(){
 
-document.getElementById('ageModal')
-.style.display='flex';
+document.getElementById('ageModal').style.display='flex';
 
 }
 
 function closeModal(){
 
-document.getElementById('ageModal')
-.style.display='none';
+document.getElementById('ageModal').style.display='none';
 
 }
 
 const cases = {
 
-"vova and vika stepsiblings":"vova-vika.html",
-
-"samantha rupnow":"samantha-rupnow.html",
-
-"rina palenkova":"rina-palenkova.html",
-
-"vladislav roslyakov":"vladislav-roslyakov.html",
-
-"pekka":"pekka.html",
-
-"brenton":"brenton.html",
-
-"payton":"payton.html",
-
-"adam lanza":"adam-lanza.html",
-
-"arthur achleithner":"arthur-achleithner.html"
+'vova and vika stepsiblings':'https://en.wikipedia.org/wiki/',
+'samantha rupnow':'https://en.wikipedia.org/wiki/',
+'rina palenkova':'https://en.wikipedia.org/wiki/',
+'vladislav roslyakov':'https://en.wikipedia.org/wiki/Vladislav_Roslyakov',
+'pekka':'https://en.wikipedia.org/wiki/Pekka-Eric_Auvinen',
+'brenton':'https://en.wikipedia.org/wiki/Christchurch_mosque_shootings',
+'payton':'https://en.wikipedia.org/wiki/2022_Buffalo_shooting',
+'adam lanza':'https://en.wikipedia.org/wiki/Adam_Lanza',
+'arthur achleithner':'https://en.wikipedia.org/wiki/'
 
 };
 
 function searchCase(){
 
 const input =
-document
-.getElementById('searchInput')
+document.getElementById('searchInput')
 .value
 .toLowerCase()
 .trim();
@@ -1120,23 +942,17 @@ window.location.href = cases[input];
 
 }else{
 
-alert("Case not found.");
+alert('Case not found.');
 
 }
 
 }
 
-document
-.getElementById("searchInput")
-.addEventListener("keypress", function(e){
+function openCase(name){
 
-if(e.key === "Enter"){
-
-searchCase();
+alert('Opening archive page for: ' + name);
 
 }
-
-});
 
 </script>
 
