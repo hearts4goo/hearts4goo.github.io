@@ -459,7 +459,7 @@ padding:18px;
 
 <p>
 This site discusses real crimes and disturbing events for awareness and educational purposes.
-You must be 18 or older to create an account and access sensitive content.
+You must be 18 or older to create an account in order to communicate or view sensitive content.
 </p>
 
 <button class="confirm" onclick="closeModal()">
@@ -484,7 +484,7 @@ Cancel
 KOTJAS ARCHIVE
 
 <small>
-remember the victims. document the truth.
+a wip archive for violent crimes
 </small>
 
 </div>
@@ -531,7 +531,7 @@ remembrance.
 <div class="panel">
 
 <div class="panel-title">
-Navigation
+feed
 </div>
 
 <div class="links">
@@ -566,19 +566,11 @@ Settings
 
 <section class="hero">
 
-<h1>
-archive the past.<br>
-learn the patterns.<br>
-<span>prevent the future.</span>
-</h1>
-
 <p>
 
-Kotjas Archive is a community-based awareness project documenting crimes,
-disappearances, attacks, and tragedies through timelines, discussions,
-and educational resources.
+Kotjas Archive is a community-based awareness project documenting crimes and tragedies aswell as letting users discuss those .
 
-This site does not condone violence or extremist ideologies.
+This site does not condone violent actions .
 
 </p>
 
@@ -607,11 +599,11 @@ Create Account
 <div>
 
 <div class="user">
-Latest Archive Post
+Welcome
 </div>
 
 <div class="tag">
-newest case update
+website work in progress
 </div>
 
 </div>
@@ -619,21 +611,19 @@ newest case update
 </div>
 
 <h2>
-Samantha Rupnow Archive Added
+Note from hearts4goo
 </h2>
 
 <p>
-New timeline documentation,
-public reports,
-discussions,
-and educational resources have been added to the archive.
+Me and nutelok just are still working on this, dont expect anything to work incase you even found this
+we started this 23/05/2026
 </p>
 
 <div class="actions">
 
-<span>♡ 3.1k likes</span>
+<span>♡ 2 likes</span>
 
-<span>✎ 402 comments</span>
+<span>✎ 0 comments</span>
 
 </div>
 
@@ -670,16 +660,16 @@ Kotjas Archive does not glorify violence,
 extremist ideologies,
 or perpetrators.
 
-Graphic content,
+Graphic content by users,
 harassment,
 and misinformation are prohibited.
 </p>
 
 <div class="actions">
 
-<span>♡ 1.2k likes</span>
+<span>♡ 1 likes</span>
 
-<span>✎ 88 comments</span>
+<span>✎ 0 comments</span>
 
 </div>
 
