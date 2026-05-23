@@ -225,6 +225,8 @@ gap:24px;
 
 .hero{
 padding:50px;
+width:100%;
+min-width:700px;
 }
 
 .hero h1{
