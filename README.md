@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -47,96 +47,58 @@ transition:.3s;
 /* HEADER */
 
 header{
-
 position:sticky;
 top:0;
 z-index:999;
 
-background:rgba(20,10,18,.92);
+background:rgba(20,10,18,.88);
 
 backdrop-filter:blur(14px);
 
 border-bottom:1px solid var(--border);
 
-padding:22px 30px;
+padding:22px 28px;
+}
 
+.topbar{
 display:flex;
-
-justify-content:space-between;
-
 align-items:center;
-
-gap:40px;
-
+justify-content:space-between;
+gap:30px;
+flex-wrap:wrap;
 }
 
-/* LEFT LOGO */
-
-.top-logo{
-
-min-width:320px;
-
-}
+/* LOGO */
 
 .logo{
-
 font-family:'Special Elite',cursive;
-
 font-size:42px;
-
 color:var(--pink);
-
 line-height:1.1;
-
 }
 
 .logo small{
-
 display:block;
-
-font-size:13px;
-
-margin-top:10px;
-
-opacity:.75;
-
+font-size:12px;
+margin-top:8px;
+opacity:.7;
 font-family:'Quicksand',sans-serif;
-
 }
 
-/* RIGHT SIDE */
+/* SEARCH */
 
-.top-right{
-
+.search-box{
 display:flex;
-
-flex-direction:column;
-
-gap:18px;
-
-width:100%;
-
-}
-
-/* SEARCH BAR */
-
-.search-header{
-
-display:flex;
-
 gap:12px;
-
-width:100%;
-
+align-items:center;
 }
 
-.search-header input{
+.search-box input{
+width:350px;
 
-flex:1;
+padding:15px 16px;
 
-padding:16px 18px;
-
-border-radius:18px;
+border-radius:16px;
 
 border:1px solid var(--border);
 
@@ -144,67 +106,27 @@ background:var(--bg2);
 
 color:var(--text);
 
-font-size:15px;
+font-size:14px;
 
 outline:none;
-
 }
 
-.search-header button{
+.search-box button{
 
-padding:16px 22px;
+padding:15px 22px;
 
 border:none;
 
-border-radius:18px;
+border-radius:16px;
 
 background:var(--pink);
 
 font-weight:bold;
 
 cursor:pointer;
-
 }
 
-/* NAVIGATION */
-
-nav{
-
-display:flex;
-
-gap:28px;
-
-align-items:center;
-
-flex-wrap:wrap;
-
-}
-
-nav a{
-
-text-decoration:none;
-
-color:var(--text);
-
-font-size:15px;
-
-transition:.2s;
-
-padding-bottom:4px;
-
-border-bottom:2px solid transparent;
-
-}
-
-nav a:hover{
-
-color:var(--pink);
-
-border-color:var(--pink);
-
-}
-
-/* LAYOUT */
+/* MAIN LAYOUT */
 
 .layout{
 
@@ -215,7 +137,6 @@ grid-template-columns:260px 1fr 320px;
 gap:24px;
 
 padding:30px;
-
 }
 
 /* PANELS */
@@ -229,404 +150,256 @@ background:rgba(33,24,38,.92);
 border:1px solid var(--border);
 
 border-radius:28px;
-
 }
 
 .panel{
-
 padding:22px;
-
 margin-bottom:24px;
-
 }
 
 .sidebar,
 .rightbar{
-
 position:sticky;
-top:120px;
+top:110px;
 height:fit-content;
-
 }
 
 .panel-title{
-
 font-family:'Special Elite',cursive;
-
 font-size:24px;
-
 margin-bottom:16px;
-
 color:var(--pink);
-
 }
 
 /* MASCOT */
 
 .mascot{
-
 text-align:center;
-
 }
 
 .mascot img{
-
 width:100%;
-
 max-width:220px;
-
+border-radius:20px;
 image-rendering:pixelated;
-
-border-radius:18px;
-
 }
 
 .quote{
-
 margin-top:14px;
-
 line-height:1.8;
-
 font-size:15px;
-
 }
 
-/* LINKS */
+/* LEFT NAV */
 
 .links{
-
 display:flex;
-
 flex-direction:column;
-
 gap:12px;
-
 }
 
 .links a{
-
 background:var(--bg2);
-
-padding:14px;
-
+padding:15px;
 border-radius:14px;
-
 text-decoration:none;
-
 color:var(--text);
-
 transition:.2s;
-
 }
 
 .links a:hover{
-
-background:var(--pink);
-color:black;
-
+background:#2a1f31;
+transform:translateX(3px);
 }
 
 /* FEED */
 
 .feed{
-
 display:flex;
-
 flex-direction:column;
-
 gap:24px;
-
 }
 
 /* HERO */
 
 .hero{
-
 padding:50px;
-
 }
 
 .hero h1{
-
-font-size:72px;
-
-line-height:1.02;
-
+font-size:70px;
+line-height:1;
 font-family:'Special Elite',cursive;
-
-margin-bottom:24px;
-
+margin-bottom:20px;
 }
 
 .hero h1 span{
-
 color:var(--pink);
-
 }
 
 .hero p{
-
 line-height:1.9;
-
 font-size:17px;
-
+margin-top:25px;
 max-width:700px;
-
-margin-bottom:28px;
-
 }
 
 /* BUTTONS */
 
 .buttons{
-
 display:flex;
-
 gap:14px;
-
+margin-top:28px;
 flex-wrap:wrap;
-
 }
 
 .btn{
-
-padding:14px 26px;
-
+padding:14px 24px;
 border-radius:16px;
-
 text-decoration:none;
-
 font-weight:bold;
-
 transition:.2s;
-
-}
-
-.primary{
-
-background:var(--pink);
-
-color:black;
-
-}
-
-.secondary{
-
-background:var(--bg2);
-
-border:1px solid var(--border);
-
-color:var(--text);
-
 }
 
 .btn:hover{
-
 transform:translateY(-2px);
+}
 
+.primary{
+background:var(--pink);
+color:black;
+}
+
+.secondary{
+background:var(--bg2);
+border:1px solid var(--border);
+color:var(--text);
 }
 
 /* POSTS */
 
 .post{
-
 padding:24px;
-
 }
 
 .post-header{
-
 display:flex;
-
 align-items:center;
-
 gap:14px;
-
 margin-bottom:18px;
-
 }
 
 .avatar{
-
 width:50px;
 height:50px;
 border-radius:50%;
 background:var(--pink);
-
 }
 
 .post h2{
-
 font-family:'Special Elite',cursive;
-
 margin-bottom:16px;
-
 color:var(--pink);
-
 }
 
 .post p{
-
 line-height:1.9;
-
 }
 
 .actions{
-
 display:flex;
-
 gap:18px;
-
 margin-top:18px;
-
 font-size:14px;
-
 opacity:.8;
-
 }
 
 /* CASES */
 
 .case-card{
-
 background:var(--bg2);
-
 padding:18px;
-
 border-radius:18px;
-
 margin-bottom:14px;
-
 border:1px solid var(--border);
-
 cursor:pointer;
-
 transition:.2s;
-
 }
 
 .case-card:hover{
-
 transform:translateY(-3px);
-
-border-color:var(--pink);
-
+background:#2a1f31;
 }
 
 .case-card h3{
-
 color:var(--pink);
-
 }
 
 /* RULES */
 
 .rules{
-
 line-height:1.9;
-
 font-size:14px;
-
 }
 
 /* MODAL */
 
 .age-modal{
-
 display:none;
-
 position:fixed;
-
 inset:0;
-
 background:rgba(0,0,0,.7);
-
 justify-content:center;
-
 align-items:center;
-
 z-index:2000;
-
 }
 
 .modal-box{
-
 background:var(--card);
-
 padding:35px;
-
 border-radius:24px;
-
 max-width:450px;
-
 width:90%;
-
 text-align:center;
-
 border:1px solid var(--border);
-
 }
 
 .modal-box h2{
-
 margin-bottom:16px;
-
 font-family:'Special Elite',cursive;
-
 color:var(--pink);
-
 }
 
 .modal-box p{
-
 line-height:1.8;
-
 margin-bottom:20px;
-
 }
 
 .modal-box button{
-
 margin:6px;
-
 padding:12px 20px;
-
 border:none;
-
 border-radius:12px;
-
 cursor:pointer;
-
 font-weight:bold;
-
 }
 
 .confirm{
-
 background:var(--pink);
-
 }
 
 .cancel{
-
 background:var(--bg2);
-
 color:var(--text);
-
 border:1px solid var(--border);
-
 }
 
 /* FOOTER */
 
 footer{
-
 padding:30px;
-
 text-align:center;
-
 opacity:.6;
-
 }
 
 /* MOBILE */
@@ -645,42 +418,27 @@ top:0;
 
 }
 
-@media(max-width:900px){
+@media(max-width:800px){
 
-header{
-
+.topbar{
 flex-direction:column;
-
-align-items:stretch;
-
+align-items:flex-start;
 }
 
-.top-logo{
-
-min-width:100%;
-
+.search-box{
+width:100%;
 }
 
-.logo{
-
-font-size:34px;
-
+.search-box input{
+width:100%;
 }
-
-}
-
-@media(max-width:700px){
 
 .hero h1{
-font-size:46px;
+font-size:48px;
 }
 
 .layout{
 padding:18px;
-}
-
-.hero{
-padding:30px;
 }
 
 }
@@ -712,13 +470,14 @@ Cancel
 </button>
 
 </div>
+
 </div>
 
 <!-- HEADER -->
 
 <header>
 
-<div class="top-logo">
+<div class="topbar">
 
 <div class="logo">
 KOTJAS ARCHIVE
@@ -729,11 +488,7 @@ remember the victims. document the truth.
 
 </div>
 
-</div>
-
-<div class="top-right">
-
-<div class="search-header">
+<div class="search-box">
 
 <input
 type="text"
@@ -747,25 +502,11 @@ Search
 
 </div>
 
-<nav>
-
-<a href="#">Home</a>
-
-<a href="#">Account</a>
-
-<a href="#">Inbox</a>
-
-<a href="#">Explore</a>
-
-<a href="#">Settings</a>
-
-</nav>
-
 </div>
 
 </header>
 
-<!-- MAIN LAYOUT -->
+<!-- MAIN -->
 
 <div class="layout">
 
@@ -778,7 +519,8 @@ Search
 <img src="mascot.png" alt="Mascot">
 
 <div class="quote">
-archive. awareness. remembrance.
+archive. awareness.<br>
+remembrance.
 </div>
 
 </div>
@@ -791,11 +533,19 @@ Navigation
 
 <div class="links">
 
-<a href="#">Recent Cases</a>
-<a href="#">Historical Archive</a>
-<a href="#">Community Posts</a>
-<a href="#">Missing Persons</a>
-<a href="#" onclick="openModal()">Account Login</a>
+<a href="#">Home</a>
+
+<a href="#" onclick="openModal()">
+Account
+</a>
+
+<a href="#">Inbox</a>
+
+<a href="#">Explore</a>
+
+<a href="#" onclick="toggleMode()">
+Settings
+</a>
 
 </div>
 
@@ -803,7 +553,7 @@ Navigation
 
 </aside>
 
-<!-- FEED -->
+<!-- CENTER FEED -->
 
 <main class="feed">
 
@@ -816,10 +566,13 @@ learn the patterns.<br>
 </h1>
 
 <p>
+
 Kotjas Archive is a community-based awareness project documenting crimes,
 disappearances, attacks, and tragedies through timelines, discussions,
 and educational resources.
+
 This site does not condone violence or extremist ideologies.
+
 </p>
 
 <div class="buttons">
@@ -832,15 +585,11 @@ Explore Cases
 Create Account
 </a>
 
-<button class="toggle" onclick="toggleMode()">
-Toggle Theme
-</button>
-
 </div>
 
 </section>
 
-<!-- POSTS -->
+<!-- POST -->
 
 <article class="post">
 
@@ -867,18 +616,23 @@ Samantha Rupnow Archive Added
 </h2>
 
 <p>
-New timeline documentation, public reports, discussions,
-and educational resources regarding the case have been added to the archive.
+New timeline documentation,
+public reports,
+discussions,
+and educational resources have been added to the archive.
 </p>
 
 <div class="actions">
 
 <span>♡ 3.1k likes</span>
+
 <span>✎ 402 comments</span>
 
 </div>
 
 </article>
+
+<!-- POST -->
 
 <article class="post">
 
@@ -906,13 +660,18 @@ Content Policy
 
 <p>
 Kotjas Archive does not glorify violence,
-extremist ideologies, or perpetrators.
-Graphic content, harassment, and misinformation are prohibited.
+extremist ideologies,
+or perpetrators.
+
+Graphic content,
+harassment,
+and misinformation are prohibited.
 </p>
 
 <div class="actions">
 
 <span>♡ 1.2k likes</span>
+
 <span>✎ 88 comments</span>
 
 </div>
@@ -1014,22 +773,30 @@ document.getElementById('ageModal').style.display='none';
 
 const cases = {
 
-'vova and vika stepsiblings':'https://en.wikipedia.org/wiki/',
-'samantha rupnow':'https://en.wikipedia.org/wiki/',
-'rina palenkova':'https://en.wikipedia.org/wiki/',
-'vladislav roslyakov':'https://en.wikipedia.org/wiki/Vladislav_Roslyakov',
-'pekka':'https://en.wikipedia.org/wiki/Pekka-Eric_Auvinen',
-'brenton':'https://en.wikipedia.org/wiki/Christchurch_mosque_shootings',
-'payton':'https://en.wikipedia.org/wiki/2022_Buffalo_shooting',
-'adam lanza':'https://en.wikipedia.org/wiki/Adam_Lanza',
-'arthur achleithner':'https://en.wikipedia.org/wiki/'
+"vova and vika stepsiblings":"cases/vova.html",
+
+"samantha rupnow":"cases/samantha.html",
+
+"rina palenkova":"cases/rina.html",
+
+"vladislav roslyakov":"cases/vladislav.html",
+
+"pekka":"cases/pekka.html",
+
+"brenton":"cases/brenton.html",
+
+"payton":"cases/payton.html",
+
+"adam lanza":"cases/adam.html",
+
+"arthur achleithner":"cases/arthur.html"
 
 };
 
 function searchCase(){
 
-const input =
-document.getElementById('searchInput')
+const input = document
+.getElementById("searchInput")
 .value
 .toLowerCase()
 .trim();
@@ -1040,7 +807,7 @@ window.location.href = cases[input];
 
 }else{
 
-alert('Case not found.');
+alert("Case not found.");
 
 }
 
@@ -1048,9 +815,27 @@ alert('Case not found.');
 
 function openCase(name){
 
-alert('Opening archive page for: ' + name);
+const key = name.toLowerCase();
+
+if(cases[key]){
+
+window.location.href = cases[key];
 
 }
+
+}
+
+document
+.getElementById("searchInput")
+.addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+
+searchCase();
+
+}
+
+});
 
 </script>
 
