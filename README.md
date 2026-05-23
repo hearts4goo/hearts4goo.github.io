@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -205,6 +205,7 @@ border-radius:14px;
 text-decoration:none;
 color:var(--text);
 transition:.2s;
+font-size:15px;
 }
 
 .links a:hover{
@@ -525,6 +526,8 @@ remembrance.
 
 </div>
 
+<!-- THIS IS THE CHANGED NAVIGATION -->
+
 <div class="panel">
 
 <div class="panel-title">
@@ -539,9 +542,13 @@ Navigation
 Account
 </a>
 
-<a href="#">Inbox</a>
+<a href="#">
+Inbox
+</a>
 
-<a href="#">Explore</a>
+<a href="#">
+Explore
+</a>
 
 <a href="#" onclick="toggleMode()">
 Settings
