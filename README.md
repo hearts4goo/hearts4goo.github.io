@@ -122,7 +122,7 @@ index.html
 </section>
 
 <footer>
-  © 2025 Kotjas Archive
+  © 2026 Kotjas Archive
 </footer>
 
 </body>
