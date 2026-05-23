@@ -1,24 +1,3 @@
-Replace everything inside your `index.html` with this code.
-It matches the mascot style more and includes:
-
-* dark/light mode toggle
-* pink aesthetic
-* mascot section
-* animated buttons
-* responsive layout
-* fandom/community vibe
-
-Before using it:
-
-1. upload your mascot image into the repo
-2. name it:
-
-```html id="a1x92m"
-mascot.png
-```
-
-Then paste this into `index.html`:
-
 ```html id="k92xla"
 <!DOCTYPE html>
 <html lang="en">
