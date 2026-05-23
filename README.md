@@ -44,7 +44,7 @@ overflow-x:hidden;
 transition:.3s;
 }
 
-/* TOP BAR */
+/* HEADER */
 
 header{
 
@@ -58,7 +58,7 @@ backdrop-filter:blur(14px);
 
 border-bottom:1px solid var(--border);
 
-padding:18px 30px;
+padding:22px 30px;
 
 display:flex;
 
@@ -66,23 +66,67 @@ justify-content:space-between;
 
 align-items:center;
 
-gap:30px;
+gap:40px;
 
 }
 
-/* SEARCH */
+/* LEFT LOGO */
+
+.top-logo{
+
+min-width:320px;
+
+}
+
+.logo{
+
+font-family:'Special Elite',cursive;
+
+font-size:42px;
+
+color:var(--pink);
+
+line-height:1.1;
+
+}
+
+.logo small{
+
+display:block;
+
+font-size:13px;
+
+margin-top:10px;
+
+opacity:.75;
+
+font-family:'Quicksand',sans-serif;
+
+}
+
+/* RIGHT SIDE */
+
+.top-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+width:100%;
+
+}
+
+/* SEARCH BAR */
 
 .search-header{
 
 display:flex;
 
-align-items:center;
-
 gap:12px;
 
 width:100%;
-
-max-width:700px;
 
 }
 
@@ -90,7 +134,7 @@ max-width:700px;
 
 flex:1;
 
-padding:15px 18px;
+padding:16px 18px;
 
 border-radius:18px;
 
@@ -108,7 +152,7 @@ outline:none;
 
 .search-header button{
 
-padding:15px 20px;
+padding:16px 22px;
 
 border:none;
 
@@ -128,9 +172,11 @@ nav{
 
 display:flex;
 
-gap:26px;
+gap:28px;
 
 align-items:center;
+
+flex-wrap:wrap;
 
 }
 
@@ -198,7 +244,7 @@ margin-bottom:24px;
 .rightbar{
 
 position:sticky;
-top:95px;
+top:120px;
 height:fit-content;
 
 }
@@ -261,13 +307,22 @@ gap:12px;
 
 background:var(--bg2);
 
-padding:12px 14px;
+padding:14px;
 
 border-radius:14px;
 
 text-decoration:none;
 
 color:var(--text);
+
+transition:.2s;
+
+}
+
+.links a:hover{
+
+background:var(--pink);
+color:black;
 
 }
 
@@ -293,13 +348,13 @@ padding:50px;
 
 .hero h1{
 
-font-size:62px;
+font-size:72px;
 
-line-height:1.05;
+line-height:1.02;
 
 font-family:'Special Elite',cursive;
 
-margin-bottom:20px;
+margin-bottom:24px;
 
 }
 
@@ -343,6 +398,8 @@ text-decoration:none;
 
 font-weight:bold;
 
+transition:.2s;
+
 }
 
 .primary{
@@ -360,6 +417,12 @@ background:var(--bg2);
 border:1px solid var(--border);
 
 color:var(--text);
+
+}
+
+.btn:hover{
+
+transform:translateY(-2px);
 
 }
 
@@ -428,7 +491,7 @@ opacity:.8;
 
 background:var(--bg2);
 
-padding:16px;
+padding:18px;
 
 border-radius:18px;
 
@@ -582,20 +645,34 @@ top:0;
 
 }
 
-@media(max-width:700px){
+@media(max-width:900px){
 
 header{
+
 flex-direction:column;
+
 align-items:stretch;
+
 }
 
-nav{
-justify-content:center;
-flex-wrap:wrap;
+.top-logo{
+
+min-width:100%;
+
 }
+
+.logo{
+
+font-size:34px;
+
+}
+
+}
+
+@media(max-width:700px){
 
 .hero h1{
-font-size:44px;
+font-size:46px;
 }
 
 .layout{
@@ -641,6 +718,21 @@ Cancel
 
 <header>
 
+<div class="top-logo">
+
+<div class="logo">
+KOTJAS ARCHIVE
+
+<small>
+remember the victims. document the truth.
+</small>
+
+</div>
+
+</div>
+
+<div class="top-right">
+
 <div class="search-header">
 
 <input
@@ -668,6 +760,8 @@ Search
 <a href="#">Settings</a>
 
 </nav>
+
+</div>
 
 </header>
 
@@ -737,6 +831,10 @@ Explore Cases
 <a href="#" class="btn secondary" onclick="openModal()">
 Create Account
 </a>
+
+<button class="toggle" onclick="toggleMode()">
+Toggle Theme
+</button>
 
 </div>
 
