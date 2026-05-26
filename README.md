@@ -5,28 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kotjas Archive</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#120d14;
---bg2:#1b1420;
+--bg:#151017;
 --panel:#211826;
---text:#ffeef6;
---pink:#ff9dc0;
---accent:#ff5d95;
---border:#3a2b3d;
+--panel2:#1a131f;
+--text:#fff4fa;
+--border:#4a364f;
+--pink:#ff9fc6;
 }
 
 .light-mode{
---bg:#fff6fa;
---bg2:#ffe8f1;
+--bg:#f5eef3;
 --panel:#ffffff;
---text:#24171f;
---pink:#c95b84;
---accent:#ff5d95;
---border:#e9bfd0;
+--panel2:#fff8fb;
+--text:#1d1620;
+--border:#d8bfd0;
+--pink:#c95f88;
 }
 
 *{
@@ -43,145 +41,138 @@ transition:.3s;
 overflow-x:hidden;
 }
 
-/* TOP BAR */
+/* TOP INFO */
 
-.topbar{
-width:100%;
-padding:18px 30px;
+.top-info{
+text-align:center;
+padding:10px;
+font-size:14px;
 border-bottom:1px solid var(--border);
-display:flex;
-justify-content:space-between;
+}
+
+/* HEADER */
+
+.header{
+display:grid;
+grid-template-columns:350px 1fr 220px;
+gap:25px;
+padding:24px;
 align-items:center;
-gap:20px;
-background:rgba(18,13,20,.85);
-backdrop-filter:blur(12px);
-position:sticky;
-top:0;
-z-index:999;
 }
 
 .logo{
-font-family:'Special Elite',cursive;
-font-size:38px;
-color:var(--pink);
+border:2px solid var(--border);
+padding:18px;
+font-size:56px;
+font-family:'Patrick Hand',cursive;
+background:var(--panel);
 }
 
-.search-area{
+.searchbar{
 display:flex;
-gap:12px;
-width:50%;
+align-items:center;
+background:var(--panel);
+border:2px solid var(--border);
+border-radius:18px;
+overflow:hidden;
+height:90px;
 }
 
-.search-area input{
+.searchbar input{
 flex:1;
-padding:16px;
-border-radius:16px;
-border:1px solid var(--border);
-background:var(--bg2);
-color:var(--text);
-font-size:15px;
-}
-
-.search-area button{
-padding:16px 24px;
+height:100%;
 border:none;
-border-radius:16px;
-background:var(--pink);
-font-weight:bold;
-cursor:pointer;
+background:transparent;
+padding:20px;
+font-size:42px;
+color:var(--text);
+font-family:'Patrick Hand',cursive;
+outline:none;
 }
 
-.profile-btn{
-background:var(--bg2);
-border:1px solid var(--border);
-padding:16px 22px;
-border-radius:16px;
+.searchbar button{
+width:110px;
+height:100%;
+border:none;
+background:transparent;
+font-size:40px;
 cursor:pointer;
 color:var(--text);
+}
+
+.profile{
+border:2px solid var(--border);
+padding:16px;
+text-align:center;
+border-radius:25px;
+font-size:24px;
+font-family:'Patrick Hand',cursive;
+background:var(--panel);
 }
 
 /* MAIN LAYOUT */
 
 .layout{
 display:grid;
-grid-template-columns:260px 1fr 280px;
-gap:24px;
-padding:24px;
-max-width:1700px;
-margin:auto;
+grid-template-columns:210px 1fr 260px;
+gap:28px;
+padding:0 24px 24px;
 }
 
-/* LEFT SIDEBAR */
+/* LEFT */
 
-.sidebar{
+.left{
 display:flex;
 flex-direction:column;
-gap:24px;
+gap:20px;
 }
 
-.panel{
-background:var(--panel);
-border:1px solid var(--border);
+.image-box{
+height:160px;
+border:2px solid var(--border);
 border-radius:30px;
-padding:24px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:var(--panel);
+overflow:hidden;
 }
 
-.panel-title{
-font-family:'Special Elite',cursive;
-font-size:28px;
-color:var(--pink);
+.image-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.nav{
+border:2px solid var(--border);
+background:var(--panel);
+padding:18px;
+min-height:620px;
+}
+
+.nav a{
+display:block;
+text-decoration:none;
+color:var(--text);
+font-size:44px;
+font-family:'Patrick Hand',cursive;
 margin-bottom:18px;
 }
 
-.mascot{
-text-align:center;
-}
+/* CENTER */
 
-.mascot img{
-width:100%;
-max-width:180px;
-border-radius:20px;
-}
-
-.quote{
-margin-top:14px;
-line-height:1.8;
-font-size:16px;
-}
-
-.nav-links{
+.center{
 display:flex;
 flex-direction:column;
-gap:14px;
-}
-
-.nav-links a{
-text-decoration:none;
-color:var(--text);
-background:var(--bg2);
-padding:15px;
-border-radius:16px;
-transition:.2s;
-}
-
-.nav-links a:hover{
-background:var(--pink);
-color:black;
-}
-
-/* CENTER CONTENT */
-
-.feed{
-display:flex;
-flex-direction:column;
-gap:24px;
+gap:30px;
 }
 
 .post{
+border:2px solid var(--border);
 background:var(--panel);
-border:1px solid var(--border);
-border-radius:30px;
-padding:28px;
+padding:24px;
+min-height:260px;
 }
 
 .post-header{
@@ -191,150 +182,96 @@ gap:14px;
 margin-bottom:18px;
 }
 
-.avatar{
-width:50px;
-height:50px;
+.circle{
+width:46px;
+height:46px;
 border-radius:50%;
-background:var(--pink);
+border:2px solid var(--border);
 }
 
-.post h2{
-font-family:'Special Elite',cursive;
-font-size:34px;
-margin-bottom:18px;
-color:var(--pink);
+.post-title{
+font-size:42px;
+font-family:'Patrick Hand',cursive;
+}
+
+.small{
+font-size:18px;
+opacity:.7;
 }
 
 .post p{
-line-height:1.9;
-font-size:17px;
+font-size:24px;
+line-height:1.5;
+margin-top:12px;
+max-width:90%;
+font-family:'Patrick Hand',cursive;
 }
 
-.actions{
-display:flex;
-gap:18px;
-margin-top:20px;
-opacity:.8;
-}
+/* RIGHT */
 
-/* HERO */
-
-.hero{
-padding:45px;
+.right{
 display:flex;
 flex-direction:column;
-gap:25px;
+gap:20px;
 }
 
-.hero-title{
-font-family:'Special Elite',cursive;
-font-size:76px;
-line-height:1;
+.right-image{
+border:2px solid var(--border);
+border-radius:40px;
+height:650px;
+overflow:hidden;
+background:var(--panel);
 }
 
-.hero-title span{
-color:var(--pink);
+.right-image img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-.hero-buttons{
-display:flex;
-gap:14px;
-flex-wrap:wrap;
-}
+/* DISCLAIMER */
 
-.hero-buttons button{
-padding:15px 24px;
-border-radius:16px;
-border:none;
-cursor:pointer;
-font-weight:bold;
-}
-
-.primary{
-background:var(--pink);
-}
-
-.secondary{
-background:var(--bg2);
-color:var(--text);
-border:1px solid var(--border);
-}
-
-/* RIGHT SIDEBAR */
-
-.rightbar{
-display:flex;
-flex-direction:column;
-gap:24px;
-}
-
-.case-card{
-background:var(--bg2);
-padding:18px;
-border-radius:18px;
-margin-bottom:14px;
-cursor:pointer;
-border:1px solid var(--border);
-transition:.2s;
-}
-
-.case-card:hover{
-transform:translateY(-3px);
-border-color:var(--pink);
-}
-
-.case-card h3{
-color:var(--pink);
-font-size:20px;
-}
-
-/* FOOTER */
-
-footer{
-margin-top:20px;
-padding:30px;
-text-align:center;
-opacity:.6;
-font-size:14px;
+.disclaimer{
+padding:0 24px 24px;
+font-size:16px;
+max-width:430px;
+line-height:1.6;
+font-family:'Patrick Hand',cursive;
 }
 
 /* TOGGLE */
 
-.theme-toggle{
+.toggle{
 position:fixed;
-right:20px;
+right:30px;
 bottom:20px;
-padding:16px 20px;
-border-radius:18px;
-border:none;
-background:var(--pink);
-font-weight:bold;
+padding:18px 28px;
+font-size:26px;
+font-family:'Patrick Hand',cursive;
+background:var(--panel);
+border:2px solid var(--border);
+color:var(--text);
 cursor:pointer;
-z-index:999;
 }
-
-/* RESPONSIVE */
 
 /* TABLET */
 
-@media(max-width:1100px){
+@media(max-width:1200px){
+
+.header{
+grid-template-columns:1fr;
+}
 
 .layout{
 grid-template-columns:220px 1fr;
 }
 
-.rightbar{
+.right{
 grid-column:1/3;
-flex-direction:row;
-overflow:auto;
 }
 
-.case-card{
-min-width:220px;
-}
-
-.hero-title{
-font-size:58px;
+.right-image{
+height:350px;
 }
 
 }
@@ -343,53 +280,40 @@ font-size:58px;
 
 @media(max-width:800px){
 
-.topbar{
-flex-direction:column;
-align-items:stretch;
-}
-
-.search-area{
-width:100%;
-}
-
 .layout{
 grid-template-columns:1fr;
-padding:14px;
 }
 
-.sidebar,
-.rightbar{
-width:100%;
+.nav{
+min-height:auto;
 }
-
-.hero-title{
-font-size:46px;
-}
-
-.post{
-padding:20px;
-}
-
-.panel{
-padding:20px;
-}
-
-}
-
-/* VERY SMALL */
-
-@media(max-width:500px){
 
 .logo{
+font-size:40px;
+}
+
+.searchbar{
+height:70px;
+}
+
+.searchbar input{
 font-size:28px;
 }
 
-.hero-title{
-font-size:38px;
+.nav a{
+font-size:34px;
 }
 
-.search-area button{
-padding:14px;
+.post-title{
+font-size:30px;
+}
+
+.post p{
+font-size:20px;
+}
+
+.profile{
+font-size:20px;
 }
 
 }
@@ -399,54 +323,43 @@ padding:14px;
 
 <body>
 
-<!-- TOP BAR -->
+<div class="top-info">
+(insert number) people here now (insert number) people here
+</div>
 
-<header class="topbar">
+<div class="header">
 
 <div class="logo">
-KOTJAS ARCHIVE
+Kotjas Archive
 </div>
 
-<div class="search-area">
-<input type="text" id="searchInput" placeholder="Search for cases...">
-<button onclick="searchCase()">Search</button>
+<div class="searchbar">
+<input type="text" placeholder="Search for cases...">
+<button>⌕</button>
 </div>
 
-<button class="profile-btn" onclick="openAccount()">
-Sign in / Profile
-</button>
+<div class="profile">
+Sign in / profile if logged in
+</div>
 
-</header>
-
-<!-- MAIN -->
+</div>
 
 <div class="layout">
 
 <!-- LEFT -->
 
-<aside class="sidebar">
+<div class="left">
 
-<div class="panel mascot">
+<div class="image-box">
 
-<!-- PUT YOUR IMAGE FILE NAME HERE -->
-<img src="mascot.png" alt="Mascot">
-
-<div class="quote">
-archive. awareness.<br>
-remembrance.
-</div>
+<!-- INSERT YOUR IMAGE -->
+<img src="leftimage.png">
 
 </div>
 
-<div class="panel">
+<div class="nav">
 
-<div class="panel-title">
-Navigation
-</div>
-
-<div class="nav-links">
-
-<a href="#">Home</a>
+<a href="#">Home ▷</a>
 <a href="#">Explore</a>
 <a href="#">Account</a>
 <a href="#">Inbox</a>
@@ -459,176 +372,94 @@ Navigation
 
 </div>
 
-<div class="panel">
-
-<p style="line-height:1.9;">
-Kotjas Archive does not condone violent actions,
-extremist ideologies, or perpetrators.
-This site is made for educational and awareness purposes only.
-</p>
-
-</div>
-
-</aside>
-
 <!-- CENTER -->
 
-<main class="feed">
-
-<div class="post hero">
-
-<div class="hero-title">
-archive<br>
-the past.<br>
-learn<br>
-the patterns.<br>
-<span>prevent<br>
-the future.</span>
-</div>
-
-<p>
-Kotjas Archive is a community-based awareness project documenting crimes,
-disappearances, and tragedies while allowing users to discuss and archive information.
-</p>
-
-<div class="hero-buttons">
-
-<button class="primary">
-Explore Cases
-</button>
-
-<button class="secondary" onclick="openAccount()">
-Create Account
-</button>
-
-</div>
-
-</div>
+<div class="center">
 
 <div class="post">
 
 <div class="post-header">
 
-<div class="avatar"></div>
+<div class="circle"></div>
 
 <div>
-<b>Community Notice</b><br>
+<div class="post-title">
+Community Notice
+</div>
+
+<div class="small">
 by hearts4goo
 </div>
-
 </div>
 
-<h2>Rules & Safety</h2>
+</div>
 
 <p>
 Kotjas Archive does not support violence,
-extremist ideologies, or glorification of perpetrators.
-Graphic content uploaded by users, harassment,
+extremist ideologies or perpetrators.
+Graphic content by users, harassment
 and misinformation are prohibited.
+
+<br><br>
+
+For more, see Rules tab.
 </p>
 
-<div class="actions">
-<span>♡ 1.2k</span>
-<span>✎ 210 comments</span>
 </div>
 
-</div>
-
-<div class="post">
+<div class="post" style="min-height:170px;">
 
 <div class="post-header">
 
-<div class="avatar"></div>
+<div class="circle"></div>
 
 <div>
-<b>Newest Updates</b><br>
+<div class="post-title">
+Newest updates
+</div>
+
+<div class="small">
 by hearts4goo
 </div>
-
 </div>
 
-<h2>Welcome</h2>
+</div>
 
 <p>
-Nothing new here yet...
+Welcome! Nothing new here yet...
 </p>
 
-<div class="actions">
-<span>♡ 230</span>
-<span>✎ 18 comments</span>
 </div>
 
 </div>
-
-</main>
 
 <!-- RIGHT -->
 
-<aside class="rightbar">
+<div class="right">
 
-<div class="panel">
+<div class="right-image">
 
-<div class="panel-title">
-Searchable Cases
+<!-- INSERT YOUR IMAGE -->
+<img src="rightimage.png">
+
 </div>
 
-<div class="case-card" onclick="openCase('Vova and Vika Stepsiblings')">
-<h3>Vova and Vika Stepsiblings</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Samantha Rupnow')">
-<h3>Samantha Rupnow</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Rina Palenkova')">
-<h3>Rina Palenkova</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Vladislav Roslyakov')">
-<h3>Vladislav Roslyakov</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Pekka')">
-<h3>Pekka</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Brenton')">
-<h3>Brenton</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Payton')">
-<h3>Payton</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Adam Lanza')">
-<h3>Adam Lanza</h3>
-</div>
-
-<div class="case-card" onclick="openCase('Arthur Achleithner')">
-<h3>Arthur Achleithner</h3>
 </div>
 
 </div>
 
-<!-- RIGHT IMAGE PANEL -->
+<div class="disclaimer">
 
-<div class="panel mascot">
-
-<!-- PUT YOUR OTHER IMAGE HERE -->
-<img src="sideimage.png" alt="Side Image">
-
-</div>
-
-</aside>
+Disclaimer: Kotjas Archive does not condone violent actions.
+This site is made for educational purposes only.
+This site is still in work in process.
+This is heavily inspired by tumblr and wpd.
+Expect changes.
 
 </div>
 
-<footer>
-Kotjas Archive • awareness project • responsive for pc, tablet, laptop, and mobile
-</footer>
-
-<button class="theme-toggle" onclick="toggleMode()">
-Switch Light/Dark Mode
+<button class="toggle" onclick="toggleMode()">
+Switch light/dark mode
 </button>
 
 <script>
@@ -637,42 +468,6 @@ function toggleMode(){
 document.body.classList.toggle("light-mode");
 }
 
-function openAccount(){
-alert("Account system not added yet.");
-}
-
-function openCase(caseName){
-alert("Opening case page for: " + caseName);
-}
-
-const cases = [
-"vova and vika stepsiblings",
-"samantha rupnow",
-"rina palenkova",
-"vladislav roslyakov",
-"pekka",
-"brenton",
-"payton",
-"adam lanza",
-"arthur achleithner"
-];
-
-function searchCase(){
-
-const input = document.getElementById("searchInput").value.toLowerCase();
-
-if(cases.includes(input)){
-alert("Opening archive page for: " + input);
-}else{
-alert("Case not found.");
-}
-
-}
-
-</script>
-
-</body>
-</html>
 </script>
 
 </body>
