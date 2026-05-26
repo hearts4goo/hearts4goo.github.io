@@ -39,33 +39,45 @@ color:var(--text);
 font-family:'Quicksand',sans-serif;
 transition:.3s;
 overflow-x:hidden;
+min-height:100vh;
 }
 
-/* TOP INFO */
+/* ONLINE BAR */
 
 .top-info{
+width:100%;
+padding:14px;
 text-align:center;
-padding:10px;
-font-size:14px;
-border-bottom:1px solid var(--border);
+font-size:16px;
+border-bottom:2px solid var(--border);
+font-family:'Patrick Hand',cursive;
+}
+
+/* MAIN WRAPPER */
+
+.wrapper{
+width:100%;
+padding:20px;
 }
 
 /* HEADER */
 
 .header{
 display:grid;
-grid-template-columns:350px 1fr 220px;
-gap:25px;
-padding:24px;
+grid-template-columns:1.2fr 1.8fr 1fr;
+gap:24px;
 align-items:center;
+margin-bottom:24px;
+width:100%;
 }
 
 .logo{
 border:2px solid var(--border);
 padding:18px;
-font-size:56px;
+font-size:58px;
 font-family:'Patrick Hand',cursive;
 background:var(--panel);
+width:100%;
 }
 
 .searchbar{
@@ -75,7 +87,8 @@ background:var(--panel);
 border:2px solid var(--border);
 border-radius:18px;
 overflow:hidden;
-height:90px;
+height:95px;
+width:100%;
 }
 
 .searchbar input{
@@ -84,7 +97,7 @@ height:100%;
 border:none;
 background:transparent;
 padding:20px;
-font-size:42px;
+font-size:46px;
 color:var(--text);
 font-family:'Patrick Hand',cursive;
 outline:none;
@@ -95,7 +108,7 @@ width:110px;
 height:100%;
 border:none;
 background:transparent;
-font-size:40px;
+font-size:42px;
 cursor:pointer;
 color:var(--text);
 }
@@ -105,18 +118,19 @@ border:2px solid var(--border);
 padding:16px;
 text-align:center;
 border-radius:25px;
-font-size:24px;
+font-size:26px;
 font-family:'Patrick Hand',cursive;
 background:var(--panel);
+width:100%;
 }
 
-/* MAIN LAYOUT */
+/* MAIN CONTENT */
 
 .layout{
 display:grid;
-grid-template-columns:210px 1fr 260px;
-gap:28px;
-padding:0 24px 24px;
+grid-template-columns:230px 1fr 300px;
+gap:24px;
+width:100%;
 }
 
 /* LEFT */
@@ -128,14 +142,11 @@ gap:20px;
 }
 
 .image-box{
-height:160px;
+height:220px;
 border:2px solid var(--border);
-border-radius:30px;
-display:flex;
-justify-content:center;
-align-items:center;
-background:var(--panel);
+border-radius:35px;
 overflow:hidden;
+background:var(--panel);
 }
 
 .image-box img{
@@ -147,15 +158,15 @@ object-fit:cover;
 .nav{
 border:2px solid var(--border);
 background:var(--panel);
-padding:18px;
-min-height:620px;
+padding:20px;
+min-height:640px;
 }
 
 .nav a{
 display:block;
 text-decoration:none;
 color:var(--text);
-font-size:44px;
+font-size:48px;
 font-family:'Patrick Hand',cursive;
 margin-bottom:18px;
 }
@@ -165,32 +176,33 @@ margin-bottom:18px;
 .center{
 display:flex;
 flex-direction:column;
-gap:30px;
+gap:28px;
 }
 
 .post{
 border:2px solid var(--border);
 background:var(--panel);
 padding:24px;
-min-height:260px;
+min-height:240px;
+width:100%;
 }
 
 .post-header{
 display:flex;
 align-items:center;
-gap:14px;
+gap:16px;
 margin-bottom:18px;
 }
 
 .circle{
-width:46px;
-height:46px;
+width:50px;
+height:50px;
 border-radius:50%;
 border:2px solid var(--border);
 }
 
 .post-title{
-font-size:42px;
+font-size:48px;
 font-family:'Patrick Hand',cursive;
 }
 
@@ -200,7 +212,7 @@ opacity:.7;
 }
 
 .post p{
-font-size:24px;
+font-size:28px;
 line-height:1.5;
 margin-top:12px;
 max-width:90%;
@@ -218,7 +230,7 @@ gap:20px;
 .right-image{
 border:2px solid var(--border);
 border-radius:40px;
-height:650px;
+height:720px;
 overflow:hidden;
 background:var(--panel);
 }
@@ -232,26 +244,46 @@ object-fit:cover;
 /* DISCLAIMER */
 
 .disclaimer{
-padding:0 24px 24px;
-font-size:16px;
-max-width:430px;
+margin-top:24px;
+font-size:18px;
 line-height:1.6;
 font-family:'Patrick Hand',cursive;
+max-width:500px;
 }
 
 /* TOGGLE */
 
 .toggle{
 position:fixed;
-right:30px;
+right:20px;
 bottom:20px;
 padding:18px 28px;
-font-size:26px;
+font-size:28px;
 font-family:'Patrick Hand',cursive;
 background:var(--panel);
 border:2px solid var(--border);
 color:var(--text);
 cursor:pointer;
+border-radius:12px;
+z-index:999;
+}
+
+/* LARGE MONITORS */
+
+@media(min-width:1800px){
+
+.wrapper{
+padding:30px 50px;
+}
+
+.logo{
+font-size:72px;
+}
+
+.post p{
+font-size:32px;
+}
+
 }
 
 /* TABLET */
@@ -271,49 +303,98 @@ grid-column:1/3;
 }
 
 .right-image{
-height:350px;
+height:380px;
 }
 
 }
 
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:850px){
+
+.wrapper{
+padding:12px;
+}
 
 .layout{
 grid-template-columns:1fr;
+}
+
+.header{
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.logo{
+font-size:42px;
+}
+
+.searchbar{
+height:75px;
+}
+
+.searchbar input{
+font-size:30px;
+}
+
+.searchbar button{
+font-size:28px;
+width:80px;
+}
+
+.profile{
+font-size:22px;
 }
 
 .nav{
 min-height:auto;
 }
 
-.logo{
-font-size:40px;
-}
-
-.searchbar{
-height:70px;
-}
-
-.searchbar input{
-font-size:28px;
-}
-
 .nav a{
-font-size:34px;
+font-size:36px;
 }
 
 .post-title{
-font-size:30px;
+font-size:34px;
+}
+
+.post p{
+font-size:22px;
+max-width:100%;
+}
+
+.right-image{
+height:340px;
+}
+
+.toggle{
+position:relative;
+right:auto;
+bottom:auto;
+width:100%;
+margin-top:20px;
+}
+
+}
+
+/* VERY SMALL */
+
+@media(max-width:500px){
+
+.logo{
+font-size:34px;
+}
+
+.searchbar input{
+font-size:24px;
 }
 
 .post p{
 font-size:20px;
 }
 
-.profile{
-font-size:20px;
+.nav a{
+font-size:30px;
 }
 
 }
@@ -323,9 +404,16 @@ font-size:20px;
 
 <body>
 
+<!-- ONLINE INFO -->
+
 <div class="top-info">
-(insert number) people here now (insert number) people here
+<span id="onlineUsers">127</span> people here now •
+<span id="loggedUsers">48</span> logged into this site
 </div>
+
+<div class="wrapper">
+
+<!-- HEADER -->
 
 <div class="header">
 
@@ -344,6 +432,8 @@ Sign in / profile if logged in
 
 </div>
 
+<!-- MAIN -->
+
 <div class="layout">
 
 <!-- LEFT -->
@@ -352,7 +442,7 @@ Sign in / profile if logged in
 
 <div class="image-box">
 
-<!-- INSERT YOUR IMAGE -->
+<!-- PUT YOUR IMAGE -->
 <img src="leftimage.png">
 
 </div>
@@ -407,7 +497,7 @@ For more, see Rules tab.
 
 </div>
 
-<div class="post" style="min-height:170px;">
+<div class="post" style="min-height:180px;">
 
 <div class="post-header">
 
@@ -431,23 +521,6 @@ Welcome! Nothing new here yet...
 
 </div>
 
-</div>
-
-<!-- RIGHT -->
-
-<div class="right">
-
-<div class="right-image">
-
-<!-- INSERT YOUR IMAGE -->
-<img src="rightimage.png">
-
-</div>
-
-</div>
-
-</div>
-
 <div class="disclaimer">
 
 Disclaimer: Kotjas Archive does not condone violent actions.
@@ -458,15 +531,51 @@ Expect changes.
 
 </div>
 
+</div>
+
+<!-- RIGHT -->
+
+<div class="right">
+
+<div class="right-image">
+
+<!-- PUT YOUR IMAGE -->
+<img src="rightimage.png">
+
+</div>
+
+</div>
+
+</div>
+
 <button class="toggle" onclick="toggleMode()">
 Switch light/dark mode
 </button>
+
+</div>
 
 <script>
 
 function toggleMode(){
 document.body.classList.toggle("light-mode");
 }
+
+/* fake online counters */
+
+function updateCounters(){
+
+const online =
+Math.floor(Math.random() * 120) + 80;
+
+const logged =
+Math.floor(Math.random() * 60) + 20;
+
+document.getElementById("onlineUsers").innerText = online;
+document.getElementById("loggedUsers").innerText = logged;
+
+}
+
+setInterval(updateCounters, 4000);
 
 </script>
 
