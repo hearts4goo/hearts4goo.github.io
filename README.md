@@ -5,26 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kotjas Archive</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#151017;
---panel:#211826;
---panel2:#1a131f;
---text:#fff4fa;
---border:#4a364f;
---pink:#ff9fc6;
+--bg:#120912;
+--panel:#211327;
+--border:#523553;
+--text:#f6ecf4;
+--soft:#b9a8b9;
 }
 
 .light-mode{
---bg:#f5eef3;
+--bg:#f4eef4;
 --panel:#ffffff;
---panel2:#fff8fb;
---text:#1d1620;
---border:#d8bfd0;
---pink:#c95f88;
+--border:#c8b4ca;
+--text:#231923;
+--soft:#675967;
 }
 
 *{
@@ -36,116 +34,102 @@ box-sizing:border-box;
 body{
 background:var(--bg);
 color:var(--text);
-font-family:'Quicksand',sans-serif;
+font-family:'Patrick Hand',cursive;
 transition:.3s;
 overflow-x:hidden;
-min-height:100vh;
 }
 
-/* ONLINE BAR */
+/* TOP AREA */
 
-.top-info{
+.top-online{
 width:100%;
-padding:14px;
 text-align:center;
-font-size:16px;
-border-bottom:2px solid var(--border);
-font-family:'Patrick Hand',cursive;
+padding:10px;
+font-size:24px;
+border-bottom:1px solid var(--border);
 }
 
-/* MAIN WRAPPER */
-
-.wrapper{
+.topbar{
 width:100%;
-padding:20px;
-}
-
-/* HEADER */
-
-.header{
-display:grid;
-grid-template-columns:1.2fr 1.8fr 1fr;
-gap:24px;
-align-items:center;
-margin-bottom:24px;
-width:100%;
-}
-
-.logo{
-border:2px solid var(--border);
-padding:18px;
-font-size:58px;
-font-family:'Patrick Hand',cursive;
-background:var(--panel);
-width:100%;
-}
-
-.searchbar{
 display:flex;
 align-items:center;
-background:var(--panel);
-border:2px solid var(--border);
-border-radius:18px;
-overflow:hidden;
-height:95px;
-width:100%;
+justify-content:space-between;
+gap:30px;
+padding:25px;
+flex-wrap:wrap;
 }
 
-.searchbar input{
+.title-box{
+border:1px solid var(--border);
+padding:25px;
+min-width:280px;
+font-size:70px;
+background:var(--panel);
 flex:1;
-height:100%;
-border:none;
-background:transparent;
-padding:20px;
-font-size:46px;
-color:var(--text);
-font-family:'Patrick Hand',cursive;
-outline:none;
 }
 
-.searchbar button{
-width:110px;
-height:100%;
-border:none;
-background:transparent;
-font-size:42px;
-cursor:pointer;
-color:var(--text);
+.search-box{
+display:flex;
+align-items:center;
+gap:10px;
+flex:2;
+min-width:300px;
 }
 
-.profile{
-border:2px solid var(--border);
-padding:16px;
-text-align:center;
-border-radius:25px;
-font-size:26px;
-font-family:'Patrick Hand',cursive;
-background:var(--panel);
+.search-box input{
 width:100%;
+padding:24px;
+font-size:42px;
+border-radius:25px;
+border:1px solid var(--border);
+background:var(--panel);
+color:var(--text);
+font-family:'Patrick Hand',cursive;
 }
 
-/* MAIN CONTENT */
+.search-btn{
+padding:22px 30px;
+border-radius:25px;
+border:1px solid var(--border);
+background:var(--panel);
+color:var(--text);
+font-size:34px;
+cursor:pointer;
+}
+
+.login-box{
+border:1px solid var(--border);
+padding:22px;
+border-radius:25px;
+background:var(--panel);
+font-size:32px;
+text-align:center;
+min-width:260px;
+}
+
+/* MAIN LAYOUT */
 
 .layout{
 display:grid;
-grid-template-columns:230px 1fr 300px;
-gap:24px;
+grid-template-columns:280px 1fr 320px;
+gap:30px;
+padding:20px;
 width:100%;
 }
 
 /* LEFT */
 
-.left{
+.left-column{
 display:flex;
 flex-direction:column;
-gap:20px;
+gap:25px;
 }
 
 .image-box{
-height:220px;
-border:2px solid var(--border);
+height:270px;
 border-radius:35px;
 overflow:hidden;
+border:1px solid var(--border);
 background:var(--panel);
 }
 
@@ -155,84 +139,79 @@ height:100%;
 object-fit:cover;
 }
 
-.nav{
-border:2px solid var(--border);
+.nav-box{
+border:1px solid var(--border);
 background:var(--panel);
 padding:20px;
-min-height:640px;
 }
 
-.nav a{
+.nav-box a{
 display:block;
 text-decoration:none;
 color:var(--text);
 font-size:48px;
-font-family:'Patrick Hand',cursive;
-margin-bottom:18px;
+margin:18px 0;
+}
+
+.disclaimer{
+font-size:18px;
+line-height:1.4;
+color:var(--soft);
+padding:10px;
 }
 
 /* CENTER */
 
-.center{
+.center-column{
 display:flex;
 flex-direction:column;
-gap:28px;
+gap:30px;
 }
 
 .post{
-border:2px solid var(--border);
+border:1px solid var(--border);
 background:var(--panel);
-padding:24px;
-min-height:240px;
-width:100%;
+padding:25px;
 }
 
 .post-header{
 display:flex;
 align-items:center;
-gap:16px;
-margin-bottom:18px;
+gap:20px;
+margin-bottom:20px;
 }
 
 .circle{
-width:50px;
-height:50px;
+width:55px;
+height:55px;
 border-radius:50%;
-border:2px solid var(--border);
+border:1px solid var(--border);
 }
 
 .post-title{
-font-size:48px;
-font-family:'Patrick Hand',cursive;
+font-size:62px;
+line-height:1;
 }
 
-.small{
-font-size:18px;
-opacity:.7;
+.username{
+font-size:26px;
+color:var(--soft);
 }
 
-.post p{
-font-size:28px;
+.post-text{
+font-size:34px;
 line-height:1.5;
-margin-top:12px;
-max-width:90%;
-font-family:'Patrick Hand',cursive;
+margin-top:20px;
 }
 
 /* RIGHT */
 
-.right{
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
 .right-image{
-border:2px solid var(--border);
+border:1px solid var(--border);
 border-radius:40px;
-height:720px;
 overflow:hidden;
 background:var(--panel);
+min-height:700px;
 }
 
 .right-image img{
@@ -241,160 +220,97 @@ height:100%;
 object-fit:cover;
 }
 
-/* DISCLAIMER */
+/* THEME BUTTON */
 
-.disclaimer{
-margin-top:24px;
-font-size:18px;
-line-height:1.6;
-font-family:'Patrick Hand',cursive;
-max-width:500px;
-}
-
-/* TOGGLE */
-
-.toggle{
+.theme-toggle{
 position:fixed;
-right:20px;
 bottom:20px;
-padding:18px 28px;
-font-size:28px;
-font-family:'Patrick Hand',cursive;
+right:20px;
+padding:20px 28px;
+font-size:30px;
+border-radius:20px;
+border:1px solid var(--border);
 background:var(--panel);
-border:2px solid var(--border);
 color:var(--text);
 cursor:pointer;
-border-radius:12px;
-z-index:999;
+font-family:'Patrick Hand',cursive;
 }
 
-/* LARGE MONITORS */
+/* RESPONSIVE */
 
-@media(min-width:1800px){
+@media(max-width:1400px){
 
-.wrapper{
-padding:30px 50px;
+.layout{
+grid-template-columns:240px 1fr 260px;
 }
 
-.logo{
-font-size:72px;
+.title-box{
+font-size:55px;
 }
 
-.post p{
+.search-box input{
 font-size:32px;
 }
 
 }
 
-/* TABLET */
-
-@media(max-width:1200px){
-
-.header{
-grid-template-columns:1fr;
-}
+@media(max-width:1100px){
 
 .layout{
-grid-template-columns:220px 1fr;
-}
-
-.right{
-grid-column:1/3;
+grid-template-columns:1fr;
 }
 
 .right-image{
-height:380px;
+min-height:400px;
+}
+
+.topbar{
+flex-direction:column;
+align-items:stretch;
+}
+
+.title-box,
+.search-box,
+.login-box{
+width:100%;
 }
 
 }
 
-/* MOBILE */
+@media(max-width:700px){
 
-@media(max-width:850px){
-
-.wrapper{
-padding:12px;
-}
-
-.layout{
-grid-template-columns:1fr;
-}
-
-.header{
-grid-template-columns:1fr;
-gap:16px;
-}
-
-.logo{
+.title-box{
 font-size:42px;
 }
 
-.searchbar{
-height:75px;
+.search-box input{
+font-size:24px;
+padding:18px;
 }
 
-.searchbar input{
-font-size:30px;
-}
-
-.searchbar button{
-font-size:28px;
-width:80px;
-}
-
-.profile{
+.search-btn{
 font-size:22px;
+padding:18px;
 }
 
-.nav{
-min-height:auto;
+.login-box{
+font-size:24px;
 }
 
-.nav a{
+.nav-box a{
 font-size:36px;
 }
 
 .post-title{
-font-size:34px;
+font-size:42px;
 }
 
-.post p{
-font-size:22px;
-max-width:100%;
-}
-
-.right-image{
-height:340px;
-}
-
-.toggle{
-position:relative;
-right:auto;
-bottom:auto;
-width:100%;
-margin-top:20px;
-}
-
-}
-
-/* VERY SMALL */
-
-@media(max-width:500px){
-
-.logo{
-font-size:34px;
-}
-
-.searchbar input{
+.post-text{
 font-size:24px;
 }
 
-.post p{
-font-size:20px;
-}
-
-.nav a{
-font-size:30px;
+.theme-toggle{
+font-size:22px;
 }
 
 }
@@ -404,51 +320,39 @@ font-size:30px;
 
 <body>
 
-<!-- ONLINE INFO -->
-
-<div class="top-info">
-<span id="onlineUsers">127</span> people here now •
-<span id="loggedUsers">48</span> logged into this site
+<div class="top-online">
+<span id="onlineUsers">0</span> people here now •
+<span id="loggedUsers">0</span> logged into this site
 </div>
 
-<div class="wrapper">
+<div class="topbar">
 
-<!-- HEADER -->
-
-<div class="header">
-
-<div class="logo">
+<div class="title-box">
 Kotjas Archive
 </div>
 
-<div class="searchbar">
-<input type="text" placeholder="Search for cases...">
-<button>⌕</button>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search for cases...">
+<button class="search-btn" onclick="searchSite()">⌕</button>
 </div>
 
-<div class="profile">
+<div class="login-box">
 Sign in / profile if logged in
 </div>
 
 </div>
 
-<!-- MAIN -->
-
 <div class="layout">
 
 <!-- LEFT -->
 
-<div class="left">
+<div class="left-column">
 
 <div class="image-box">
-
-<!-- PUT YOUR IMAGE -->
-<img src="leftimage.png">
-
+<img src="yourimage1.jpg">
 </div>
 
-<div class="nav">
-
+<div class="nav-box">
 <a href="#">Home ▷</a>
 <a href="#">Explore</a>
 <a href="#">Account</a>
@@ -457,77 +361,54 @@ Sign in / profile if logged in
 <a href="#">Rules</a>
 <a href="#">Socials</a>
 <a href="#">Donations</a>
+</div>
 
+<div class="disclaimer">
+Kotjas Archive does not condone violent actions. This site is made for educational purposes only. This site is still in work in progress. Inspired by Tumblr and web archives.
 </div>
 
 </div>
 
 <!-- CENTER -->
 
-<div class="center">
+<div class="center-column">
 
 <div class="post">
 
 <div class="post-header">
-
 <div class="circle"></div>
 
 <div>
-<div class="post-title">
-Community Notice
-</div>
-
-<div class="small">
-by hearts4goo
-</div>
+<div class="post-title">Community Notice</div>
+<div class="username">by hearts4goo</div>
 </div>
 
 </div>
 
-<p>
-Kotjas Archive does not support violence,
-extremist ideologies or perpetrators.
-Graphic content by users, harassment
-and misinformation are prohibited.
-
+<div class="post-text">
+Kotjas Archive does not support violence, extremist ideologies or perpetrators.
+Graphic content by users, harassment and misinformation are prohibited.
 <br><br>
-
 For more, see Rules tab.
-</p>
+</div>
 
 </div>
 
-<div class="post" style="min-height:180px;">
+<div class="post">
 
 <div class="post-header">
-
 <div class="circle"></div>
 
 <div>
-<div class="post-title">
-Newest updates
-</div>
-
-<div class="small">
-by hearts4goo
-</div>
+<div class="post-title">Newest updates</div>
+<div class="username">by hearts4goo</div>
 </div>
 
 </div>
 
-<p>
+<div class="post-text">
 Welcome! Nothing new here yet...
-</p>
-
 </div>
-
-<div class="disclaimer">
-
-Disclaimer: Kotjas Archive does not condone violent actions.
-This site is made for educational purposes only.
-This site is still in work in process.
-This is heavily inspired by tumblr and wpd.
-Expect changes.
 
 </div>
 
@@ -535,47 +416,87 @@ Expect changes.
 
 <!-- RIGHT -->
 
-<div class="right">
-
 <div class="right-image">
-
-<!-- PUT YOUR IMAGE -->
-<img src="rightimage.png">
-
+<img src="yourimage2.jpg">
 </div>
 
 </div>
 
-</div>
-
-<button class="toggle" onclick="toggleMode()">
+<button class="theme-toggle" onclick="toggleMode()">
 Switch light/dark mode
 </button>
 
-</div>
-
 <script>
+
+/* DARK/LIGHT MODE */
 
 function toggleMode(){
 document.body.classList.toggle("light-mode");
 }
 
-/* fake online counters */
+/* SEARCH */
 
-function updateCounters(){
+function searchSite(){
+
+const input = document
+.getElementById("searchInput")
+.value
+.toLowerCase();
+
+const pages = {
+
+"home":"#",
+"explore":"#",
+"account":"#",
+"inbox":"#",
+"settings":"#",
+"rules":"#"
+
+};
+
+if(pages[input]){
+window.location.href = pages[input];
+}else{
+alert("No page found.");
+}
+
+}
+
+/* ONLINE USERS */
+
+/*
+REAL online user counts are NOT possible with
+plain HTML alone.
+
+For REAL live numbers you need:
+- a database
+- backend/server
+- Firebase / Supabase / Node.js etc
+
+So for now this simulates live changing numbers.
+*/
+
+function updateFakeStats(){
 
 const online =
-Math.floor(Math.random() * 120) + 80;
+Math.floor(Math.random()*120)+20;
 
 const logged =
-Math.floor(Math.random() * 60) + 20;
+Math.floor(Math.random()*50)+5;
 
 document.getElementById("onlineUsers").innerText = online;
 document.getElementById("loggedUsers").innerText = logged;
 
 }
 
-setInterval(updateCounters, 4000);
+updateFakeStats();
+
+setInterval(updateFakeStats,5000);
+
+</script>
+
+</body>
+</html>
 
 </script>
 
